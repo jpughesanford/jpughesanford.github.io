@@ -24,9 +24,7 @@ I even got $z = x + y$ working.</description>
     processEnvironments: true
 }});
 </script>
-<script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.</p>
 
