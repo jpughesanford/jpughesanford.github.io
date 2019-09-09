@@ -6,10 +6,19 @@
     <description>Recent content on Joshua Pughe-Sanford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Sep 2019 21:22:00 -0400</lastBuildDate>
     
 	<atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/my-first-post/</link>
+      <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
+      
+      <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
+      <description>Please github gods, let me post things</description>
+    </item>
     
     <item>
       <title>About</title>
