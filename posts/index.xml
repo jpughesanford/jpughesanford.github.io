@@ -15,7 +15,7 @@
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
             <description>MathJax.Hub.Config({tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true }});   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
-I even got $z = x + y$ working.</description>
+I even got $z = x^2 + y^2$ working.</description>
             <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']], 
@@ -28,7 +28,7 @@ I even got $z = x + y$ working.</description>
 
 <p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.</p>
 
-<p>I even got <code>$z = x + y$</code> working.</p>
+<p>I even got <code>$z = x^2 + y^2$</code> working.</p>
 ]]></content>
         </item>
         
