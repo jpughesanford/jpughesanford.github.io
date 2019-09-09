@@ -6,9 +6,28 @@
     <description>Recent content on Joshua Pughe-Sanford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://jpughesanford.github.io/about/</link>
+      <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://jpughesanford.github.io/about/</guid>
+      <description>Josh is a third year graduate research assistant working with Roman Grigoriev in the Center for Non-Linear Science at the Georgia Institute of Technology.</description>
+    </item>
+    
+    <item>
+      <title>Showcase</title>
+      <link>https://jpughesanford.github.io/showcase/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://jpughesanford.github.io/showcase/</guid>
+      <description> Talks  Extreme Events from Bi-Lobed Inertial Manifold in 2D Kolmogorov Flow, DFD Seattle 2019.  Publications  Renormalization of Discrete-Time Quantum Walks with non-Grover Coins, 2017  </description>
+    </item>
     
   </channel>
 </rss>
