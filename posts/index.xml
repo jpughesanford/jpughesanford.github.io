@@ -14,21 +14,24 @@
             <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-            <description>MathJax.Hub.Config({tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true }});   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
-I even got $z = x^2 + y^2$ working.</description>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
+I even got $$equations$$ working.</description>
             <content type="html"><![CDATA[<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']], 
     displayMath: [['$$','$$']],
     skipTags: ["script","noscript","style","textarea","pre"],
     processEnvironments: true
-}});
+    }
+});
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.</p>
 
-<p>I even got <code>$z = x^2 + y^2$</code> working.</p>
+<p>I even got $$equations$$ working.</p>
 ]]></content>
         </item>
         
