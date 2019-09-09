@@ -15,11 +15,8 @@
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
             <description>MathJax.Hub.Config({tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true }});   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
-&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; HEAD
-I even got $z = x + y$ working. I even got $$equations$$ working. &amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt; 4fdc426636b452f9adb9af4c440c08057601be8c</description>
-            <content type="html"><![CDATA[
-
-<script type="text/x-mathjax-config">
+I even got $z = x + y$ working.</description>
+            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']], 
     displayMath: [['$$','$$']],
@@ -33,12 +30,7 @@ I even got $z = x + y$ working. I even got $$equations$$ working. &amp;gt;&amp;g
 
 <p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.</p>
 
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-
-<h1 id="i-even-got-z-x-y-working">I even got <code>$z = x + y$</code> working.</h1>
-
-<p>I even got $$equations$$ working.
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 4fdc426636b452f9adb9af4c440c08057601be8c</p>
+<p>I even got <code>$z = x + y$</code> working.</p>
 ]]></content>
         </item>
         
