@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>educational on Joshua Pughe-Sanford</title>
+    <link>https://jpughesanford.github.io/tags/educational/</link>
+    <description>Recent content in educational on Joshua Pughe-Sanford</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
+    
+	<atom:link href="https://jpughesanford.github.io/tags/educational/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Numerical Scheme for Recurrence in Systems with Continuous Translational Symmetries</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</link>
+      <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
+      
+      <guid>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</guid>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jpughesanford.github.io/</loc>
-    <lastmod>2019-09-08T21:22:00-04:00</lastmod>
+    <loc>https://jpughesanford.github.io/tags/educational/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jpughesanford.github.io/posts/2019/09/my-first-post/</loc>
-    <lastmod>2019-09-08T21:22:00-04:00</lastmod>
+    <loc>https://jpughesanford.github.io/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://jpughesanford.github.io/posts/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jpughesanford.github.io/tags/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jpughesanford.github.io/posts/2019/09/my-first-post/</loc>
     <lastmod>2019-09-08T21:22:00-04:00</lastmod>
   </url>
   
@@ -29,10 +44,6 @@
   
   <url>
     <loc>https://jpughesanford.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://jpughesanford.github.io/tags/</loc>
   </url>
   
 </urlset>

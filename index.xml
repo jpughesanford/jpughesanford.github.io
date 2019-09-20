@@ -6,10 +6,19 @@
     <description>Recent content on Joshua Pughe-Sanford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Sep 2019 21:22:00 -0400</lastBuildDate>
+    <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
     
 	<atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Numerical Scheme for Recurrence in Systems with Continuous Translational Symmetries</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</link>
+      <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
+      
+      <guid>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</guid>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+    </item>
     
     <item>
       <title>My First Post</title>
@@ -17,8 +26,7 @@
       <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
       
       <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
-I even got $$equations$$ working.</description>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
     </item>
     
     <item>
@@ -27,8 +35,7 @@ I even got $$equations$$ working.</description>
       <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jpughesanford.github.io/about/</guid>
-      <description>Pronouns: He/Him/His
-I am third year graduate research assistant working with Roman Grigoriev in the Center for Non-Linear Science at the Georgia Institute of Technology. My journey in physics has taken me to many different institutions and through many different fields, but each stepping stone has slowly led me towards pursuing non-linear dynamics and pattern formation on fields. One day, one of us is going to make sense of the chaos that is non-linear dynamics in infinite dimensional systems.</description>
+      <description>I am graduate research assistant working with Roman Grigoriev in the Center for Non-Linear Science at the Georgia Institute of Technology. My journey in physics has taken me to many different institutions and through many different fields, but each stepping stone has slowly led me towards pursuing non-linear dynamics and pattern formation on fields. One day, one of us is going to make sense of the chaos that is non-linear dynamics in infinite dimensional systems.</description>
     </item>
     
     <item>

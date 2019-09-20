@@ -5,8 +5,83 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 08 Sep 2019 21:22:00 -0400</lastBuildDate>
+        <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Numerical Scheme for Recurrence in Systems with Continuous Translational Symmetries</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</link>
+            <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</guid>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+            <content type="html"><![CDATA[
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']], 
+    displayMath: [['$$','$$']],
+    skipTags: ["script","noscript","style","textarea","pre"],
+    processEnvironments: true
+    }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &ldquo;current&rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &ldquo;current&rdquo; of another ECS. Formally, this  has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow. While many interesting results have come from this perspective, such as <a href="https://arxiv.org/abs/nlin/0001034">being able to write spatio-temporal averages in terms of an expansion about periodic orbits of the system</a>, it remains a mystery how to efficiently build a library of all the ECS in a system.</p>
+
+<p>The prevailing method to search for periodic orbits in the literature is to do recurrence diagrams. given a state $u(x,t)$, a heatmap is generated
+<p align="Center"><img src="/innerproduct_1.png" style="width:500px; float:center; padding: 10px"></p>
+where each pixel represents $$||u(x,t)-u(x,t-\tau)||^2.$$ This heatmap will have a minimum at $(t,\tau)$ when $u(x,t)$ lies in the vicinity of a periodic orbit of period $\tau$.</p>
+
+<p>In systems with continuous symmetries, which admit relative periodic solutions, this problem is much more complicated. A relative periodic orbit satisfies
+$$u(x,t)=u(x-\phi,t-\tau),$$
+so depending on the value of $\phi$, we won&rsquo;t see a minimum at $(t,\tau)$ on our heatmap close to this orbit, becuase
+$$||u(x,t)-u(x,t-\tau)||^2 = ||u(x,t)-u(x-\phi,t)||^2 &gt; 0.$$
+To bypass this, researchers make a new heatmap where each pixel represents a minimization over $\phi$,
+$$\min_\phi||u(x,t)-u(x-\phi,t-\tau)||^2.$$</p>
+
+<p>Depending on the needed accuracy, this minimization scheme takes an extremely long time, and prohibits us from running reccurence on long turbulent trajectories. This means we lose on seeing a lot of potentially relevent orbits.</p>
+
+<h2 id="solution">Solution</h2>
+
+<p>The solution is to speed of this minimization over $\phi$. To do this, lets consider two vectors, $u(x)$ and $v(x)$, where $v$ takes the place of a state that is possibly a shifted copy of $u$. Below we will show that there exists a function $0&lt;F(l)&lt;1$ such that $$F(l)=1 \iff v(x-l)\ \text{ is parallel to } \ u(x).$$
+In matlab, <code>F(l) = ifftn(conj(fftn(U)).*fftn(V)))</code>.</p>
+
+<p>The proper shift to minimize $||u-v||^2$ is then
+$$\text{argmax}\ F(l).$$</p>
+
+<p><strong>Proof</strong> Suppose we shift $v$ by some value $l$ and write it as a sum of its component along $u$ and its component orthogonal to a shifted copy of $u$,
+$$v(x-l) = c_1(l)\ u(x-l)+c_2(l)\ u_{\perp}(x-l).$$
+We&rsquo;ve now tranlated this old problem of finding $\phi$ into a new problem: how can I choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible?</p>
+
+<p>To proceed, we take the fourier transforms of both $u$ and $v$,
+$$u(x) = \int U(k)e^{i k x} dk$$
+$$v(x-l) = \int V(k)e^{i k (x-l)} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
+where by Plancherel&rsquo;s theorem,
+$$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk,$$
+$$\int \overline{u(x)}u_\perp(x)dx = \int \overline{U(k)}U_\perp(k)dk = 0.$$</p>
+
+<p>It follows that the the fourier transform of $\overline{U}V$ has the property,
+$$F(l) = \int \overline{U}V = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)}e^{i k l} = c_1(l) ||u||^2,$$
+which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information of how much of $v$ does not lie on $u$&hellip;</p>
+
+<p>To overcome this, normalize both vectors,
+$$ u(x) \mapsto \frac{u(x)}{||u||}$$
+$$ v(x-l) \mapsto \frac{u}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
+It follows that
+$$F(l) = \frac{c_1(l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
+intuitively, $F(l)$ now tells you the fraction of $v(x-l)$ that lies along $u(x)$, and has a maximum at the closest pass of $v$ to $u$, $F(\phi)=1$.</p>
+
+<p>This methods allows for a rapid minimization over the continuous translational symmetry. In my code, this method had a speedup of x60 over the usual brute force approach. Furthermore, this method extends to arbitrarily many symmetry directions, allowing for the possibility of minimizing over time as well, if one were to, say, need to find the minimal distance between two periodic orbits.</p>
+
+<p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
+]]></content>
+        </item>
         
         <item>
             <title>My First Post</title>
@@ -14,8 +89,7 @@
             <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.
-I even got $$equations$$ working.</description>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
             <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
@@ -29,7 +103,7 @@ I even got $$equations$$ working.</description>
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills.</p>
+<p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&rsquo;all will get to read it. In addition to that, I plan on posted fun and interesting derivations or concepts I learn along the way.</p>
 
 <p>I even got $$equations$$ working.</p>
 ]]></content>
