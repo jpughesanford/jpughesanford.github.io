@@ -5,8 +5,38 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
+        <lastBuildDate>Sat, 21 Sep 2019 13:17:20 -0400</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Weekly Research Update September 20</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</link>
+            <pubDate>Sat, 21 Sep 2019 13:17:20 -0400</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</guid>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method.</description>
+            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']], 
+    displayMath: [['$$','$$']],
+    skipTags: ["script","noscript","style","textarea","pre"],
+    processEnvironments: true
+    }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as <a href="http://www.cns.gatech.edu/~predrag/papers/atlas12.pdf">forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space</a>. These methods are beautifully rigorous, but often hard to implement numerically in a way that doesn&rsquo;t require human supervision.</p>
+
+<p>To overcome this hurdle, I developed a fast numerical method for <a href="https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/">determining the minimum distance between states in systems with arbitrarily many continuous symmetries</a>. This method performs as quickly as the true symmetry reduction method proposed by Predrag. In addition, this method is state-independent, meaning that it will work well regardless of what modes are relevant, or where we are in phase space.</p>
+
+<p>Using this method, I have generated a plethora of states that corresponds to close passes to exact coherent structures in my system. One close pass, in particular, seems to pass close to a relative periodic orbit that has sections in both the high dissipation and low dissipation regimes. Therefore, any trajectory that saddles this orbit will be a trajectory that exhibits an extreme event. I am coverging this solution using direct-adjoint iterations as I type this.</p>
+
+<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
+]]></content>
+        </item>
         
         <item>
             <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
@@ -52,27 +82,27 @@ $$\min_l||u(x,t)-u(x-l,t-\tau)||^2.$$</p>
 <p>The solution is to speed of this minimization over $l$. To do this, lets consider two vectors, $u(x)$ and $v(x)$, where $v$ takes the place of a state that is possibly a shifted copy of $u$. Below we will show that there exists a function $0&lt;F(l)&lt;1$ such that
 $$\text{argmax } F(l) = \text{argmin } || v(x-l)-u(x)||^2.$$</p>
 
-<p><strong>Proof</strong> Suppose we shift $v$ by some value $l$ and write it as a sum of its component along $u$ and its component orthogonal to a shifted copy of $u$,
+<p><strong>Proof</strong> Suppose we shift $u$ by some value $l$ and write $v$ as a sum of its component along this shifted copy of $u$ and its component orthogonal to this shifted copy of $u$,
 $$v(x) = c_1(l)\ u(x-l)+c_2(l)\ u_{\perp}(x-l).$$
-We&rsquo;ve now tranlated this old problem of finding $l$ into a new problem: how can I choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible?</p>
+We now want to choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible.</p>
 
 <p>To proceed, we take the fourier transforms of both $u$ and $v$,
 $$u(x) = \int U(k)e^{i k x} dk$$
-$$v(x) = \int V(k)e^{i k (x-l)} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
+$$v(x) = \int V(k)e^{i k x} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
 where by Plancherel&rsquo;s theorem,
-$$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk,$$
+$$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk = ||u||^2,$$
 $$\int \overline{u(x)}u_\perp(x)dx = \int \overline{U(k)}U_\perp(k)dk = 0.$$</p>
 
 <p>It follows that the the fourier transform of $\overline{U}V$ has the property,
-$$F(l) = \int \overline{U}Vdk = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)}e^{i k l}dk = c_1(l) ||u||^2,$$
-which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information of how much of $v$ does not lie on $u$&hellip;</p>
+$$F(l) = \int \overline{U}Vdk = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (-l)}e^{i k l}dk = c_1(l) ||u||^2,$$
+which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information on $u_\perp$, it could be arbitrarily large&hellip;</p>
 
 <p>To overcome this, normalize $u$ and $v$ before finding $F$. Written in terms of the unnormalized vectors, it follows then that
 <!-- $$ u(x) \mapsto \frac{u(x)}{||u||}$$
 $$ v(x-l) \mapsto \frac{v(x-l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u\_{\perp}||^2)}}.$$
 It follows that  -->
 $$F(l) = \frac{c_1(l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
-intuitively, $F(l)$ now tells you the fraction of $v(x-l)$ that lies along $u(x)$. Moreover, $F(l)$ has a maximum whenever $v$ is at its closest to $u$.
+intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)$, which diminishes as $u_\perp$ increases. Moreover, $F(l)$ still has a maximum whenever $v$ is at its closest to $u$.
 <!-- In other word $F(l)=1$.  --></p>
 
 <p>This methods allows for a rapid minimization over the continuous translational symmetry. In my code, this method had a speedup of x60 over the usual brute force approach. Furthermore, this method extends to arbitrarily many symmetry directions, allowing for the possibility of minimizing over time as well, if one were to, say, need to find the minimal distance between two periodic orbits.</p>
@@ -85,6 +115,52 @@ phi = (L/N)*(index-1)
 </code></pre>
 
 <p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Weekly Research Update September 13</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</link>
+            <pubDate>Sat, 14 Sep 2019 21:16:25 -0400</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</guid>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
+The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup.</description>
+            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']], 
+    displayMath: [['$$','$$']],
+    skipTags: ["script","noscript","style","textarea","pre"],
+    processEnvironments: true
+    }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).</p>
+
+<p>The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation. Understanding the state space structures that allow for excursions back into the high-dissipation/close-to-laminar regime are crucial.</p>
+
+<p>The search for coherent structures to date begins with reccurence diagrams and these needs to be run on long, long turbulent trajectories. In order to expand the search for relative periodic orbits, these need to calculate
+$$\min_{l\in[0,2\pi)} ||u(x,t)-T_l\ u(x,t-\tau)||^2$$
+where $T$ is the translation operator along some continuous symmetry. This can obviously become quite computationally expensive, and to combat this bottle, Predrag Cvitanović came up with a method to <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.084102">quotient out the continous symmetry</a>. The issue with this method is that is requires knowledge of a &ldquo;relevant&rdquo;, non-zero mode throughout the trajectory. It is quite difficult to choose such a mode in practice, as the relevant modes change often over the course of a turbulent trajectory, leading to artifacts in the reccurence plots that detract from finding structures.</p>
+
+<p>In search of finding this relevant mode, I binned the state into high-dissipation and low-dissipation bins and plotted their average wavenumber (upper row) and velocity (lower row) fields.
+<p align="Center"><img src="/rusep13_1.png" style="width:700px; float:center; padding: 10px"></p>
+From this I can say that the system visits the high dissipation regime about ~3% of the time, and that the $k=(2, 0)$ mode is much more important in the high-dissipation regime, while the $k=(1,0)$ mode is more important in the low dissipation regime. That said, the mode $k=(1,4)$ seems to be available to both. This could be a potentially perfect mode for the symmetry reduction scheme. If this not work, we may need to look into multi-mode methods, or some other more dynamic method of symmetry reduction along the trajectory.</p>
+
+<p>Despite these issues with recurrence, three new equilibria were found in the high-dissipation regime, along with a pre-periodic orbit (shown below). Due to the high state space speed that we observe in the dissipitive regime, I doubt that these equilibria will be relevant to finding the transition mechanism causing extreme events. Orbits, and the connections between them, are much more likely candidates.</p>
+
+<p><div>
+<p align="Left"><img src="/rusep13_2.png" style="width:250px; float: left; padding: 10px"></p>
+<p align="Center"><img src="/rusep13_3.png" style="width:250px; float: left; padding: 10px"></p>
+<p align="Right"><img src="/rusep13_4.png" style="width:250px; float: left; padding: 10px"></p>
+</div>
+<p align="Center"><img src="/rusep13_5.gif" style="width:700px; float: center; padding: 50px"></p></p>
+
+<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
 ]]></content>
         </item>
         
@@ -169,7 +245,7 @@ $$Re = Re^\frac{1}{4}Re^\frac{3}{4} = \frac{d_{max}}{d_{min}} \frac{u_{max}}{u_{
             <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
             <content type="html"><![CDATA[<script type="text/x-mathjax-config">
   MathJax.Hub.Config({
   jax: ["input/TeX", "output/HTML-CSS"],
@@ -183,7 +259,7 @@ $$Re = Re^\frac{1}{4}Re^\frac{3}{4} = \frac{d_{max}}{d_{min}} \frac{u_{max}}{u_{
 </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-<p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates, to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&rsquo;all will get to read it. In addition to that, I plan on posted fun and interesting derivations or concepts I learn along the way.</p>
+<p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates (<a href="/tags/researchupdate/">#researchupdate</a>), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (<a href="/tags/educational/">#educational</a>).</p>
 
 <p>I even got $$equations$$ working.</p>
 ]]></content>

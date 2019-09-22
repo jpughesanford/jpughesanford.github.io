@@ -42,7 +42,7 @@
 
 <meta itemprop="datePublished" content="2019-09-20T13:49:07-04:00" />
 <meta itemprop="dateModified" content="2019-09-20T13:49:07-04:00" />
-<meta itemprop="wordCount" content="669">
+<meta itemprop="wordCount" content="666">
 
 
 
@@ -162,27 +162,27 @@ $$\min_l||u(x,t)-u(x-l,t-\tau)||^2.$$</p>
 <p>The solution is to speed of this minimization over $l$. To do this, lets consider two vectors, $u(x)$ and $v(x)$, where $v$ takes the place of a state that is possibly a shifted copy of $u$. Below we will show that there exists a function $0&lt;F(l)&lt;1$ such that
 $$\text{argmax } F(l) = \text{argmin } || v(x-l)-u(x)||^2.$$</p>
 
-<p><strong>Proof</strong> Suppose we shift $v$ by some value $l$ and write it as a sum of its component along $u$ and its component orthogonal to a shifted copy of $u$,
+<p><strong>Proof</strong> Suppose we shift $u$ by some value $l$ and write $v$ as a sum of its component along this shifted copy of $u$ and its component orthogonal to this shifted copy of $u$,
 $$v(x) = c_1(l)\ u(x-l)+c_2(l)\ u_{\perp}(x-l).$$
-We&rsquo;ve now tranlated this old problem of finding $l$ into a new problem: how can I choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible?</p>
+We now want to choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible.</p>
 
 <p>To proceed, we take the fourier transforms of both $u$ and $v$,
 $$u(x) = \int U(k)e^{i k x} dk$$
-$$v(x) = \int V(k)e^{i k (x-l)} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
+$$v(x) = \int V(k)e^{i k x} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
 where by Plancherel&rsquo;s theorem,
-$$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk,$$
+$$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk = ||u||^2,$$
 $$\int \overline{u(x)}u_\perp(x)dx = \int \overline{U(k)}U_\perp(k)dk = 0.$$</p>
 
 <p>It follows that the the fourier transform of $\overline{U}V$ has the property,
-$$F(l) = \int \overline{U}Vdk = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)}e^{i k l}dk = c_1(l) ||u||^2,$$
-which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information of how much of $v$ does not lie on $u$&hellip;</p>
+$$F(l) = \int \overline{U}Vdk = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (-l)}e^{i k l}dk = c_1(l) ||u||^2,$$
+which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information on $u_\perp$, it could be arbitrarily large&hellip;</p>
 
 <p>To overcome this, normalize $u$ and $v$ before finding $F$. Written in terms of the unnormalized vectors, it follows then that
 <!-- $$ u(x) \mapsto \frac{u(x)}{||u||}$$
 $$ v(x-l) \mapsto \frac{v(x-l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u\_{\perp}||^2)}}.$$
 It follows that  -->
 $$F(l) = \frac{c_1(l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
-intuitively, $F(l)$ now tells you the fraction of $v(x-l)$ that lies along $u(x)$. Moreover, $F(l)$ has a maximum whenever $v$ is at its closest to $u$.
+intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)$, which diminishes as $u_\perp$ increases. Moreover, $F(l)$ still has a maximum whenever $v$ is at its closest to $u$.
 <!-- In other word $F(l)=1$.  --></p>
 
 <p>This methods allows for a rapid minimization over the continuous translational symmetry. In my code, this method had a speedup of x60 over the usual brute force approach. Furthermore, this method extends to arbitrarily many symmetry directions, allowing for the possibility of minimizing over time as well, if one were to, say, need to find the minimal distance between two periodic orbits.</p>
@@ -206,7 +206,7 @@ phi = (L/N)*(index-1)
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://jpughesanford.github.io/tags/educational">educational</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>669 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>666 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-09-20 13:49 -0400</p>
         </div>
@@ -220,11 +220,18 @@ phi = (L/N)*(index-1)
 
                 <div class="pagination__buttons">
                     
+                        <span class="button previous">
+                            <a href="https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/">
+                                <span class="button__icon">←</span>
+                                <span class="button__text">Weekly Research Update September 20</span>
+                            </a>
+                        </span>
+                    
 
                     
                         <span class="button next">
-                            <a href="https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/">
-                                <span class="button__text">An Intuitive Interpretation of Reynolds Number in Turbulence</span>
+                            <a href="https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/">
+                                <span class="button__text">Weekly Research Update September 13</span>
                                 <span class="button__icon">→</span>
                             </a>
                         </span>
