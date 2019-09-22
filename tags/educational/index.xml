@@ -12,12 +12,21 @@
     
     
     <item>
-      <title>Numerical Scheme for Recurrence in Systems with Continuous Translational Symmetries</title>
-      <link>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</link>
+      <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/computationally-efficient-way-of-determining-minimal-distance-in-systems-with-continuous-translational-symmetries/</link>
       <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
       
-      <guid>https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/</guid>
+      <guid>https://jpughesanford.github.io/posts/2019/09/computationally-efficient-way-of-determining-minimal-distance-in-systems-with-continuous-translational-symmetries/</guid>
       <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+    </item>
+    
+    <item>
+      <title>An Intuitive Interpretation of Reynolds Number in Turbulence</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</link>
+      <pubDate>Fri, 13 Sep 2019 14:08:45 -0400</pubDate>
+      
+      <guid>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</guid>
+      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Where does the Reynold&amp;rsquo;s Number come from? If you&amp;rsquo;ve had hot coffee, you&amp;rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface.</description>
     </item>
     
   </channel>
