@@ -109,7 +109,7 @@ intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)
 
 <p>In matlab, on a domain of length L with N gridpoints,</p>
 
-<pre><code class="language-matlab">F = ifft(conj(fft(u/norm(u))).*fft(v/norm(v))))
+<pre><code class="language-matlab">F = fft(conj(fft(u/norm(u))).*fft(v/norm(v))))
 [~,index] = max(F)
 phi = (L/N)*(index-1)
 </code></pre>
