@@ -5,38 +5,8 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 21 Sep 2019 13:17:20 -0400</lastBuildDate>
+        <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Weekly Research Update September 20</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</link>
-            <pubDate>Sat, 21 Sep 2019 13:17:20 -0400</pubDate>
-            
-            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method.</description>
-            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
-<p>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as <a href="http://www.cns.gatech.edu/~predrag/papers/atlas12.pdf">forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space</a>. These methods are beautifully rigorous, but often hard to implement numerically in a way that doesn&rsquo;t require human supervision.</p>
-
-<p>To overcome this hurdle, I developed a fast numerical method for <a href="https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/">determining the minimum distance between states in systems with arbitrarily many continuous symmetries</a>. This method performs as quickly as the true symmetry reduction method proposed by Predrag. In addition, this method is state-independent, meaning that it will work well regardless of what modes are relevant, or where we are in phase space.</p>
-
-<p>Using this method, I have generated a plethora of states that corresponds to close passes to exact coherent structures in my system. One close pass, in particular, seems to pass close to a relative periodic orbit that has sections in both the high dissipation and low dissipation regimes. Therefore, any trajectory that saddles this orbit will be a trajectory that exhibits an extreme event. I am coverging this solution using direct-adjoint iterations as I type this.</p>
-
-<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
-]]></content>
-        </item>
         
         <item>
             <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
@@ -115,6 +85,36 @@ phi = (L/N)*(index-1)
 </code></pre>
 
 <p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Weekly Research Update September 20</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</link>
+            <pubDate>Fri, 20 Sep 2019 13:17:20 -0400</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</guid>
+            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method.</description>
+            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']], 
+    displayMath: [['$$','$$']],
+    skipTags: ["script","noscript","style","textarea","pre"],
+    processEnvironments: true
+    }
+});
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<p>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as <a href="http://www.cns.gatech.edu/~predrag/papers/atlas12.pdf">forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space</a>. These methods are beautifully rigorous, but often hard to implement numerically in a way that doesn&rsquo;t require human supervision.</p>
+
+<p>To overcome this hurdle, I developed a fast numerical method for <a href="https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/">determining the minimum distance between states in systems with arbitrarily many continuous symmetries</a>. This method performs as quickly as the true symmetry reduction method proposed by Predrag. In addition, this method is state-independent, meaning that it will work well regardless of what modes are relevant, or where we are in phase space.</p>
+
+<p>Using this method, I have generated a plethora of states that corresponds to close passes to exact coherent structures in my system. One close pass, in particular, seems to pass close to a relative periodic orbit that has sections in both the high dissipation and low dissipation regimes. Therefore, any trajectory that saddles this orbit will be a trajectory that exhibits an extreme event. I am coverging this solution using direct-adjoint iterations as I type this.</p>
+
+<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
 ]]></content>
         </item>
         
