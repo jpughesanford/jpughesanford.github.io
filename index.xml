@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joshua Pughe-Sanford</title>
@@ -6,10 +6,15 @@
     <description>Recent content on Joshua Pughe-Sanford</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
-    
-	<atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 04 Oct 2019 12:00:32 -0400</lastBuildDate><atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Research Update October 4</title>
+      <link>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</link>
+      <pubDate>Fri, 04 Oct 2019 12:00:32 -0400</pubDate>
+      
+      <guid>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</guid>
+      <description>This week was spent mostly working and fine tuning fellowship applications. That said, this week also required some careful thought into the phase space structure underlying extreme events. Previously, I had been converging a relative periodic orbit that seemed to lie in both the high dissipation and low dissipation regimes of the kolmogorov flow at $Re=40$. Both adjoint looping and direct newton iterations were used to try and converge this orbit, but both converged relatively slowly when compared to other RPOs converged at this Reynolds number and were stopped.</description>
+    </item>
     
     <item>
       <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
@@ -17,26 +22,26 @@
       <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
       
       <guid>https://jpughesanford.github.io/posts/2019/09/computationally-efficient-way-of-determining-minimal-distance-in-systems-with-continuous-translational-symmetries/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+      <description>Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
     </item>
     
     <item>
-      <title>Weekly Research Update September 20</title>
-      <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</link>
+      <title>Research Update September 20</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</link>
       <pubDate>Fri, 20 Sep 2019 13:17:20 -0400</pubDate>
       
-      <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method.</description>
+      <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</guid>
+      <description>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space.</description>
     </item>
     
     <item>
-      <title>Weekly Research Update September 13</title>
-      <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</link>
+      <title>Research Update September 13</title>
+      <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</link>
       <pubDate>Sat, 14 Sep 2019 21:16:25 -0400</pubDate>
       
-      <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
-The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup.</description>
+      <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</guid>
+      <description>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
+The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation.</description>
     </item>
     
     <item>
@@ -45,7 +50,7 @@ The laminar state is possibly one of the most highly dissipitive states on the a
       <pubDate>Fri, 13 Sep 2019 14:08:45 -0400</pubDate>
       
       <guid>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Where does the Reynold&amp;rsquo;s Number come from? If you&amp;rsquo;ve had hot coffee, you&amp;rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface.</description>
+      <description>Where does the Reynold&amp;rsquo;s Number come from? If you&amp;rsquo;ve had hot coffee, you&amp;rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface. So, why are the ripples on your coffee so much smoother than those on the Ocean? and why do they travel faster?</description>
     </item>
     
     <item>
@@ -54,7 +59,7 @@ The laminar state is possibly one of the most highly dissipitive states on the a
       <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
       
       <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-      <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
+      <description>I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (#educational).</description>
     </item>
     
     <item>
@@ -72,10 +77,10 @@ The laminar state is possibly one of the most highly dissipitive states on the a
       <pubDate>Sun, 08 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://jpughesanford.github.io/showcase/</guid>
-      <description>Talks  Heteroclinic Connections as Predictors of Extreme Events in Weakly Turbulent Flow, DFD Seattle 2019. (Slides / Talk)
- Numerical Methods for Determining the Walk Dimension of Quantum Walks, Emory University 2017.
-  Publications  S. Boettcher, J. Pughe-Sanford (2017). Renormalization of Discrete-Time Quantum Walks with non-Grover Coins. Journal of Statistical Mechanics, 2018(3).
- J. Pughe-Sanford (2017). Properties of Quantum Walks within Various One Dimensional Media. Honors Thesis.</description>
+      <description>Talks   Heteroclinic Connections as Predictors of Extreme Events in Weakly Turbulent Flow, DFD Seattle 2019. (Slides / Talk)
+  Numerical Methods for Determining the Walk Dimension of Quantum Walks, Emory University 2017.
+  Publications   S. Boettcher, J. Pughe-Sanford (2017). Renormalization of Discrete-Time Quantum Walks with non-Grover Coins. Journal of Statistical Mechanics, 2018(3).
+  J. Pughe-Sanford (2017). Properties of Quantum Walks within Various One Dimensional Media.</description>
     </item>
     
   </channel>

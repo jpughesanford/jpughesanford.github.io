@@ -5,8 +5,32 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
+        <lastBuildDate>Fri, 04 Oct 2019 12:00:32 -0400</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Research Update October 4</title>
+            <link>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</link>
+            <pubDate>Fri, 04 Oct 2019 12:00:32 -0400</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</guid>
+            <description>This week was spent mostly working and fine tuning fellowship applications. That said, this week also required some careful thought into the phase space structure underlying extreme events. Previously, I had been converging a relative periodic orbit that seemed to lie in both the high dissipation and low dissipation regimes of the kolmogorov flow at $Re=40$. Both adjoint looping and direct newton iterations were used to try and converge this orbit, but both converged relatively slowly when compared to other RPOs converged at this Reynolds number and were stopped.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>This week was spent mostly working and fine tuning fellowship applications. That said, this week also required some careful thought into the phase space structure underlying extreme events. Previously, I had been converging a relative periodic orbit that seemed to lie in both the high dissipation and low dissipation regimes of the kolmogorov flow at $Re=40$. Both adjoint looping and direct newton iterations were used to try and converge this orbit, but both converged relatively slowly when compared to other RPOs converged at this Reynolds number and were stopped. That said, the relative residual attained from Newton was small enough to warrant more time investigating this potential RPO.</p>
+<!-- raw HTML omitted -->
+<p>This potential RPO was found when searching for heteroclinic between high-dissipation and low-dissipation solutions. The possibility exists that this is not actually an RPO, but instead a heteroclinic/homoclinic connection that makes a close pass back upon itself (as in the diagram above). This would explain the local minimum found, although it would not explain the poor convergence of the solvers about this potential solution.</p>
+<p>To explore this possibility further, we ran a calculation to see how close the turbulent trajectory was to other known solutions before and after extreme events (including the extreme event that lead us to this potential RPO in the first place). We found that the turbulent trajectory never made a close pass to any known high dissipation solutions. However, is did make close passes to a known travelling wave solution and a known periodic orbit before and after each highly dissipitive event. If a heteroclinic were to exist instead of an RPO (such as in the diagram above), its likely that the travelling wave RE100 and or the periodic orbit PO01 take the place of the endpoints.</p>
+<p>To more rigorously analyze which of these states are likely to support connections, we analyzed their spectra, below are the tabulated results</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Analyzing the dimension and codimesion of the unstable manifold gives us a better ideas of which solutions be the initial and final points on a heteroclinic connection.</p>
+<!-- raw HTML omitted -->
+<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
+]]></content>
+        </item>
         
         <item>
             <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
@@ -14,152 +38,88 @@
             <pubDate>Fri, 20 Sep 2019 13:49:07 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/computationally-efficient-way-of-determining-minimal-distance-in-systems-with-continuous-translational-symmetries/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
-            <content type="html"><![CDATA[
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+            <description>Motivation Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &amp;ldquo;current&amp;rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &amp;ldquo;current&amp;rdquo; of another ECS. Formally, this has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="motivation">Motivation</h2>
-
 <p>Exact coherent structures (ECS) provide a simplified perspective on turbulence in which entire neighborhoods of points are pushed along a &ldquo;current&rdquo; created by an exact structure. Trajectories will continue along this characteristic flow of one ECS for a bit and get swept away by the &ldquo;current&rdquo; of another ECS. Formally, this  has allowed us to model statistical properties of the flow in terms of an expansion around the periodic orbits of the flow. While many interesting results have come from this perspective, such as <a href="https://arxiv.org/abs/nlin/0001034">being able to write spatio-temporal averages in terms of an expansion about periodic orbits of the system</a>, it remains a mystery how to efficiently build a library of all the ECS in a system.</p>
-
-<p>The prevailing method to search for periodic orbits in the literature is to do recurrence diagrams. given a state $u(x,t)$, a heatmap is generated
-<p align="Center"><img src="/innerproduct_1.png" style="width:500px; float:center; padding: 10px"></p>
-where each pixel represents $$||u(x,t)-u(x,t-\tau)||^2.$$ This heatmap will have a minimum at $(t,\tau)$ when $u(x,t)$ lies in the vicinity of a periodic orbit of period $\tau$.</p>
-
+<p>The prevailing method to search for periodic orbits in the literature is to do recurrence diagrams. given a state $u(x,t)$, a heatmap is generated</p>
+<!-- raw HTML omitted -->
 <p>In systems with continuous symmetries, which admit relative periodic solutions, this problem is much more complicated. A relative periodic orbit satisfies
 $$u(x,t)=u(x-l,t-\tau),$$
 so depending on the value of $l$, we won&rsquo;t see a minimum at $(t,\tau)$ on our heatmap close to this orbit, becuase
 $$||u(x,t)-u(x,t-\tau)||^2 = ||u(x,t)-u(x-l,t)||^2 &gt; 0.$$
 To bypass this, researchers make a new heatmap where each pixel represents a minimization over $l$,
 $$\min_l||u(x,t)-u(x-l,t-\tau)||^2.$$</p>
-
 <p>Depending on the needed accuracy, this minimization scheme takes an extremely long time, and prohibits us from running reccurence on long turbulent trajectories. This means we lose out on seeing a lot of potentially relevent orbits.</p>
-
 <h2 id="solution">Solution</h2>
-
 <p>The solution is to speed of this minimization over $l$. To do this, lets consider two vectors, $u(x)$ and $v(x)$, where $v$ takes the place of a state that is possibly a shifted copy of $u$. Below we will show that there exists a function $0&lt;F(l)&lt;1$ such that
 $$\text{argmax } F(l) = \text{argmin } || v(x-l)-u(x)||^2.$$</p>
-
 <p><strong>Proof</strong> Suppose we shift $u$ by some value $l$ and write $v$ as a sum of its component along this shifted copy of $u$ and its component orthogonal to this shifted copy of $u$,
 $$v(x) = c_1(l)\ u(x-l)+c_2(l)\ u_{\perp}(x-l).$$
 We now want to choose $l$ such that we get as close to $c_1(l)=1, c_2(l)=0$ as possible.</p>
-
 <p>To proceed, we take the fourier transforms of both $u$ and $v$,
 $$u(x) = \int U(k)e^{i k x} dk$$
 $$v(x) = \int V(k)e^{i k x} dk = \int \left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (x-l)} dk.$$
 where by Plancherel&rsquo;s theorem,
 $$\int \overline{u(x)}u(x)dx = \int \overline{U(k)}U(k)dk = ||u||^2,$$
 $$\int \overline{u(x)}u_\perp(x)dx = \int \overline{U(k)}U_\perp(k)dk = 0.$$</p>
-
 <p>It follows that the the fourier transform of $\overline{U}V$ has the property,
 $$F(l) = \int \overline{U}Vdk = \int \overline{U(k)}\left[c_1(l)\ U(k)+c_2(l)\ U_{\perp}(k)\right]e^{i k (-l)}e^{i k l}dk = c_1(l) ||u||^2,$$
 which allows us to probe the value of $c_1$ for all shifts $l$. An issue here is that we have no information on $u_\perp$, it could be arbitrarily large&hellip;</p>
-
-<p>To overcome this, normalize $u$ and $v$ before finding $F$. Written in terms of the unnormalized vectors, it follows then that
-<!-- $$ u(x) \mapsto \frac{u(x)}{||u||}$$
-$$ v(x-l) \mapsto \frac{v(x-l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u\_{\perp}||^2)}}.$$
-It follows that  -->
-$$F(l) = \frac{c_1(l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
-intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)$, which diminishes as $u_\perp$ increases. Moreover, $F(l)$ still has a maximum whenever $v$ is at its closest to $u$.
-<!-- In other word $F(l)=1$.  --></p>
-
+<p>To overcome this, normalize $u$ and $v$ before finding $F$. Written in terms of the unnormalized vectors, it follows then that</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>$$F(l) = \frac{c_1(l)}{\sqrt{c_1(l)^2||u||^2+c_2(l)^2||u_{\perp}||^2)}}.$$
+intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)$, which diminishes as $u_\perp$ increases. Moreover, $F(l)$ still has a maximum whenever $v$ is at its closest to $u$.</p>
+<!-- raw HTML omitted -->
 <p>This methods allows for a rapid minimization over the continuous translational symmetry. In my code, this method had a speedup of x60 over the usual brute force approach. Furthermore, this method extends to arbitrarily many symmetry directions, allowing for the possibility of minimizing over time as well, if one were to, say, need to find the minimal distance between two periodic orbits.</p>
-
 <p>In matlab, on a domain of length L with N gridpoints,</p>
-
-<pre><code class="language-matlab">F = fft(conj(fft(u/norm(u))).*fft(v/norm(v))))
-[~,index] = max(F)
-phi = (L/N)*(index-1)
-</code></pre>
-
-<p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">F = fft(conj(fft(u<span style="color:#f92672">/</span>norm(u)))<span style="color:#f92672">.*</span>fft(v<span style="color:#f92672">/</span>norm(v))))
+[<span style="color:#f92672">~</span>,index] = max(F)
+phi = (L<span style="color:#f92672">/</span>N)<span style="color:#f92672">*</span>(index<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
 ]]></content>
         </item>
         
         <item>
-            <title>Weekly Research Update September 20</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</link>
+            <title>Research Update September 20</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</link>
             <pubDate>Fri, 20 Sep 2019 13:17:20 -0400</pubDate>
             
-            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-20/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method.</description>
-            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+            <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</guid>
+            <description>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as <a href="http://www.cns.gatech.edu/~predrag/papers/atlas12.pdf">forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space</a>. These methods are beautifully rigorous, but often hard to implement numerically in a way that doesn&rsquo;t require human supervision.</p>
-
 <p>To overcome this hurdle, I developed a fast numerical method for <a href="https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/">determining the minimum distance between states in systems with arbitrarily many continuous symmetries</a>. This method performs as quickly as the true symmetry reduction method proposed by Predrag. In addition, this method is state-independent, meaning that it will work well regardless of what modes are relevant, or where we are in phase space.</p>
-
 <p>Using this method, I have generated a plethora of states that corresponds to close passes to exact coherent structures in my system. One close pass, in particular, seems to pass close to a relative periodic orbit that has sections in both the high dissipation and low dissipation regimes. Therefore, any trajectory that saddles this orbit will be a trajectory that exhibits an extreme event. I am coverging this solution using direct-adjoint iterations as I type this.</p>
-
 <p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
 ]]></content>
         </item>
         
         <item>
-            <title>Weekly Research Update September 13</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</link>
+            <title>Research Update September 13</title>
+            <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</link>
             <pubDate>Sat, 14 Sep 2019 21:16:25 -0400</pubDate>
             
-            <guid>https://jpughesanford.github.io/posts/2019/09/weekly-research-update-september-13/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
-The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup.</description>
-            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+            <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</guid>
+            <description>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
+The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation.</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).</p>
-
 <p>The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation. Understanding the state space structures that allow for excursions back into the high-dissipation/close-to-laminar regime are crucial.</p>
-
 <p>The search for coherent structures to date begins with reccurence diagrams and these needs to be run on long, long turbulent trajectories. In order to expand the search for relative periodic orbits, these need to calculate
 $$\min_{l\in[0,2\pi)} ||u(x,t)-T_l\ u(x,t-\tau)||^2$$
 where $T$ is the translation operator along some continuous symmetry. This can obviously become quite computationally expensive, and to combat this bottle, Predrag Cvitanović came up with a method to <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.084102">quotient out the continous symmetry</a>. The issue with this method is that is requires knowledge of a &ldquo;relevant&rdquo;, non-zero mode throughout the trajectory. It is quite difficult to choose such a mode in practice, as the relevant modes change often over the course of a turbulent trajectory, leading to artifacts in the reccurence plots that detract from finding structures.</p>
-
-<p>In search of finding this relevant mode, I binned the state into high-dissipation and low-dissipation bins and plotted their average wavenumber (upper row) and velocity (lower row) fields.
-<p align="Center"><img src="/rusep13_1.png" style="width:700px; float:center; padding: 10px"></p>
-From this I can say that the system visits the high dissipation regime about ~3% of the time, and that the $k=(2, 0)$ mode is much more important in the high-dissipation regime, while the $k=(1,0)$ mode is more important in the low dissipation regime. That said, the mode $k=(1,4)$ seems to be available to both. This could be a potentially perfect mode for the symmetry reduction scheme. If this not work, we may need to look into multi-mode methods, or some other more dynamic method of symmetry reduction along the trajectory.</p>
-
+<p>In search of finding this relevant mode, I binned the state into high-dissipation and low-dissipation bins and plotted their average wavenumber (upper row) and velocity (lower row) fields.</p>
+<!-- raw HTML omitted -->
 <p>Despite these issues with recurrence, three new equilibria were found in the high-dissipation regime, along with a pre-periodic orbit (shown below). Due to the high state space speed that we observe in the dissipitive regime, I doubt that these equilibria will be relevant to finding the transition mechanism causing extreme events. Orbits, and the connections between them, are much more likely candidates.</p>
-
-<p><div>
-<p align="Left"><img src="/rusep13_2.png" style="width:250px; float: left; padding: 10px"></p>
-<p align="Center"><img src="/rusep13_3.png" style="width:250px; float: left; padding: 10px"></p>
-<p align="Right"><img src="/rusep13_4.png" style="width:250px; float: left; padding: 10px"></p>
-</div>
-<p align="Center"><img src="/rusep13_5.gif" style="width:700px; float: center; padding: 50px"></p></p>
-
+<!-- raw HTML omitted -->
 <p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
 ]]></content>
         </item>
@@ -170,49 +130,30 @@ From this I can say that the system visits the high dissipation regime about ~3%
             <pubDate>Fri, 13 Sep 2019 14:08:45 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   Where does the Reynold&amp;rsquo;s Number come from? If you&amp;rsquo;ve had hot coffee, you&amp;rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface.</description>
-            <content type="html"><![CDATA[
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
-<h2 id="where-does-the-reynold-s-number-come-from">Where does the Reynold&rsquo;s Number come from?</h2>
-
+            <description>Where does the Reynold&amp;rsquo;s Number come from? If you&amp;rsquo;ve had hot coffee, you&amp;rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface. So, why are the ripples on your coffee so much smoother than those on the Ocean? and why do they travel faster?</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="where-does-the-reynolds-number-come-from">Where does the Reynold&rsquo;s Number come from?</h2>
 <p>If you&rsquo;ve had hot coffee, you&rsquo;ve probably noticed the really fast ripples that run across the surface of the liquid as you blow on it to cool it down. This system, your coffee, is quite similar the system of waves rolling across the ocean surface. So, why are the ripples on your coffee so much smoother than those on the Ocean? and why do they travel faster? why do oceanic waves produce foam, and coffee waves not so much?</p>
-
 <p>The answer ultimately comes down to scales. While the physics of both systems are almost identical, the spatial and temporal scales are vastly different. This seemingly tiny difference drastically effects the dynamics available to each system. The Navier-Stokes equation,
 $$\rho\left(\frac{\partial u}{\partial t}+u\cdot\nabla u \right) = -\nabla p +\eta \nabla^2 u+f,$$
 describes the evolution of a velocity field, $u=u(x,t)$. This function $u$ describes a relationship between meters, $x$, and seconds $t$, and the Navier-Stokes equation acts as a constraint on what that relationship can look like. If we were able to scale $x$ and $t$ and arrive back at another solution to Navier-Stokes, we would call this equation scale-invariant. Solutions are almost never scale-invariant, and that is why we see such a drastic difference between the dynamics in our coffee and in the ocean.</p>
-
 <p>We can show this rigorously by defining new <a href="http://www.math.wisc.edu/~angenent/519.2014s/problems/non-dimensionalization.html">dimensionless variables</a>,
 $$x = Xx^*$$
 $$u = Uu^*$$
 $$t = (X/U)t^*$$
-$$p = (1/\rho)p^*$$
-<!-- $$f = (X/\rho U^2)f^\*.$$ -->
-In terms of these variables, the Navier-Stokes equation
+$$p = (1/\rho)p^*$$</p>
+<!-- raw HTML omitted -->
+<p>In terms of these variables, the Navier-Stokes equation
 $$\frac{\partial u^*}{\partial t^*}+u^*\cdot\nabla u^* = -\frac{1}{\rho}\nabla p^*+ \frac{1}{Re}\nabla^2 u^*+\frac{1}{Fr^2}f^*,$$
 has only two parameters, $Re = (\rho U X)/\eta$ and $Fr = U\sqrt{\frac{\rho}{X}}$. As the scale of the system changes, so do these parameters, and therefore the dynamics. $Re$ is called Reynold&rsquo;s number and $Fr$ is called the Froude number, both named after that physicists that first analyzed them. For oceanic systems, $Re$ is of order $10^4-10^8$, while in your morning cup of coffee its closer to $1-100$. We can now see explicitly that Reynolds number is a control parameter for how strongly dissipation ($\nabla^2 u^*$) acts in our dynamics.</p>
-
 <h2 id="how-can-we-interpret-the-reynolds-number-in-the-turbulent-regime">How can we interpret the Reynolds Number in the turbulent regime?</h2>
-
 <p>This parameter has a very interesting interpretation in Kolmogorov&rsquo;s theory of turbulence. As $Re$ increases, our system becomes less dissipitive, so we should expect a larger range of structures in the flow. As we&rsquo;re about to show, this is precisely the case.</p>
-
 <p>In Kolmogorov&rsquo;s theory of turbulence, we consider a homogeneous and isotropic fluid whose dynamics is governed by eddys of various sizes. That is, although the fluid is riddled with turbulent vortices, any statitical averages of the flow are constant in space and time. In this system, two relevant scales are immidiately available, the diameter of a vortex $d$ and the speed of its outer edge $u$. From these scales we can determine a characteristic time scale, $t = \frac{\pi d}{u}\sim\frac{d}{u}$. This is how long it would take a tracer particle to make one full rotation around the outer edge of a vortex.</p>
-
-<p>Energy is fed into the system at some large scale $d_{max}$, and cascades down from larger structures to smaller structures, as predicted by Kolmogorov scaling. The energy then leaves the system at some minimal scale $d_{min}$ due to viscosity.
-<!-- We can label these structures sizes by wavenumber $k$, since large wavenumbers will corespond to very small wavelength structures in the system and small wavenumbers will correspond to large wavelength structures.  -->
-Let $\epsilon$ be the energy being dissipated from the system every second. Since the system is in equilibrium, we expect the energy at each length scale $E(k)$ to remain roughly constant in time, meaning that
+<p>Energy is fed into the system at some large scale $d_{max}$, and cascades down from larger structures to smaller structures, as predicted by Kolmogorov scaling. The energy then leaves the system at some minimal scale $d_{min}$ due to viscosity.</p>
+<!-- raw HTML omitted -->
+<p>Let $\epsilon$ be the energy being dissipated from the system every second. Since the system is in equilibrium, we expect the energy at each length scale $E(k)$ to remain roughly constant in time, meaning that
 $$| \text{energy leaving } E(k) | =| \text{energy entering } E(k) |  = \epsilon$$
 for all $k$. The units of dissipation are
 $$[\epsilon] = \frac{\text{energy}}{\text{mass}\times\text{time}} = \frac{X^2}{T^3}.$$
@@ -223,18 +164,15 @@ $$[\nu] = \frac{X^2}{T}.$$
 By dimensional analysis, we can write this quantity as
 $$\nu = \epsilon d^2/u^2 = d^{\frac{4}{3}}\epsilon^{\frac{1}{3}}.$$
 Thus vortices will dissipear at length scale $d_{min} = (\nu^3/\epsilon)^{\frac{1}{4}}$.</p>
-
 <p>With the groundwork now laid, and we are ready to show that
-$$\frac{d_{max}}{d_{min}} \sim \frac{X}{(X\nu^3/U^3)^{\frac{1}{4}}} = \left(\frac{UX}{\nu}\right)^{\frac{3}{4}} = Re^\frac{3}{4}$$
-<!-- and the ratio  -->
-$$\frac{u_{max}}{u_{min}} \sim \frac{(\epsilon d_{max})^{\frac{1}{3}}}{(\epsilon d_{min})^{\frac{1}{3}}} = \left(\frac{d_{max}}{d_{min}}\right)^{\frac{1}{3}} = Re^\frac{1}{4}.$$
-<!-- Together this shows that **the Reynolds number, $Re$, is in fact**  -->
-and
+$$\frac{d_{max}}{d_{min}} \sim \frac{X}{(X\nu^3/U^3)^{\frac{1}{4}}} = \left(\frac{UX}{\nu}\right)^{\frac{3}{4}} = Re^\frac{3}{4}$$</p>
+<!-- raw HTML omitted -->
+<p>$$\frac{u_{max}}{u_{min}} \sim \frac{(\epsilon d_{max})^{\frac{1}{3}}}{(\epsilon d_{min})^{\frac{1}{3}}} = \left(\frac{d_{max}}{d_{min}}\right)^{\frac{1}{3}} = Re^\frac{1}{4}.$$</p>
+<!-- raw HTML omitted -->
+<p>and
 $$Re = Re^\frac{1}{4}Re^\frac{3}{4} = \frac{d_{max}}{d_{min}} \frac{u_{max}}{u_{min}} = \frac{\rho u_{max} d_{max}}{\rho u_{min} d_{min}} = \frac{L_{max}}{L_{min}}.$$
 <strong>In turbulence Reynolds, number is the ratio of the angular momenta between the largest eddies accessible to the system and the smallest.</strong></p>
-
 <p>Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
-
 <p>A large portion of this work was inspired by <a href="http://www.dartmouth.edu/~cushman/courses/engs250/Kolmogorov.pdf">work done by Benoit Cushman-Roison</a> at Dartmouth College.</p>
 ]]></content>
         </item>
@@ -245,22 +183,11 @@ $$Re = Re^\frac{1}{4}Re^\frac{3}{4} = \frac{d_{max}}{d_{min}} \frac{u_{max}}{u_{
             <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
             
             <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-            <description>MathJax.Hub.Config({ jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;], tex2jax: { inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]], displayMath: [[&#39;$$&#39;,&#39;$$&#39;]], skipTags: [&#34;script&#34;,&#34;noscript&#34;,&#34;style&#34;,&#34;textarea&#34;,&#34;pre&#34;], processEnvironments: true } });   I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it.</description>
-            <content type="html"><![CDATA[<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']], 
-    displayMath: [['$$','$$']],
-    skipTags: ["script","noscript","style","textarea","pre"],
-    processEnvironments: true
-    }
-});
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+            <description>I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (#educational).</description>
+            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates (<a href="/tags/researchupdate/">#researchupdate</a>), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (<a href="/tags/educational/">#educational</a>).</p>
-
 <p>I even got $$equations$$ working.</p>
 ]]></content>
         </item>
