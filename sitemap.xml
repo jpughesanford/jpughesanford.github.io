@@ -2,38 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jpughesanford.github.io/</loc>
-    <lastmod>2019-10-04T12:00:32-04:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/posts/</loc>
-    <lastmod>2019-10-04T12:00:32-04:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</loc>
-    <lastmod>2019-10-04T12:00:32-04:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/tags/researchupdate/</loc>
-    <lastmod>2019-10-04T12:00:32-04:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/tags/</loc>
-    <lastmod>2019-10-04T12:00:32-04:00</lastmod>
-  </url><url>
     <loc>https://jpughesanford.github.io/posts/2019/09/computationally-efficient-way-of-determining-minimal-distance-in-systems-with-continuous-translational-symmetries/</loc>
     <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url><url>
     <loc>https://jpughesanford.github.io/tags/educational/</loc>
     <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url><url>
-    <loc>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</loc>
-    <lastmod>2019-09-20T13:17:20-04:00</lastmod>
+    <loc>https://jpughesanford.github.io/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url><url>
-    <loc>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</loc>
-    <lastmod>2019-09-14T21:16:25-04:00</lastmod>
+    <loc>https://jpughesanford.github.io/posts/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
+  </url><url>
+    <loc>https://jpughesanford.github.io/tags/</loc>
+    <lastmod>2019-09-20T13:49:07-04:00</lastmod>
   </url><url>
     <loc>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</loc>
     <lastmod>2019-09-13T14:08:45-04:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/posts/2019/09/my-first-post/</loc>
-    <lastmod>2019-09-08T21:22:00-04:00</lastmod>
   </url><url>
     <loc>https://jpughesanford.github.io/about/</loc>
     <lastmod>2019-09-08T00:00:00+00:00</lastmod>

@@ -5,32 +5,8 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Fri, 04 Oct 2019 12:00:32 -0400</lastBuildDate>
+        <lastBuildDate>Fri, 20 Sep 2019 13:49:07 -0400</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Research Update October 4</title>
-            <link>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</link>
-            <pubDate>Fri, 04 Oct 2019 12:00:32 -0400</pubDate>
-            
-            <guid>https://jpughesanford.github.io/posts/2019/10/research-update-october-4/</guid>
-            <description>This week was spent mostly working and fine tuning fellowship applications. That said, this week also required some careful thought into the phase space structure underlying extreme events. Previously, I had been converging a relative periodic orbit that seemed to lie in both the high dissipation and low dissipation regimes of the kolmogorov flow at $Re=40$. Both adjoint looping and direct newton iterations were used to try and converge this orbit, but both converged relatively slowly when compared to other RPOs converged at this Reynolds number and were stopped.</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>This week was spent mostly working and fine tuning fellowship applications. That said, this week also required some careful thought into the phase space structure underlying extreme events. Previously, I had been converging a relative periodic orbit that seemed to lie in both the high dissipation and low dissipation regimes of the kolmogorov flow at $Re=40$. Both adjoint looping and direct newton iterations were used to try and converge this orbit, but both converged relatively slowly when compared to other RPOs converged at this Reynolds number and were stopped. That said, the relative residual attained from Newton was small enough to warrant more time investigating this potential RPO.</p>
-<!-- raw HTML omitted -->
-<p>This potential RPO was found when searching for heteroclinic between high-dissipation and low-dissipation solutions. The possibility exists that this is not actually an RPO, but instead a heteroclinic/homoclinic connection that makes a close pass back upon itself (as in the diagram above). This would explain the local minimum found, although it would not explain the poor convergence of the solvers about this potential solution.</p>
-<p>To explore this possibility further, we ran a calculation to see how close the turbulent trajectory was to other known solutions before and after extreme events (including the extreme event that lead us to this potential RPO in the first place). We found that the turbulent trajectory never made a close pass to any known high dissipation solutions. However, is did make close passes to a known travelling wave solution and a known periodic orbit before and after each highly dissipitive event. If a heteroclinic were to exist instead of an RPO (such as in the diagram above), its likely that the travelling wave RE100 and or the periodic orbit PO01 take the place of the endpoints.</p>
-<p>To more rigorously analyze which of these states are likely to support connections, we analyzed their spectra, below are the tabulated results</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Analyzing the dimension and codimesion of the unstable manifold gives us a better ideas of which solutions be the initial and final points on a heteroclinic connection.</p>
-<!-- raw HTML omitted -->
-<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
-]]></content>
-        </item>
         
         <item>
             <title>Computationally Efficient way of Determining Minimal Distance in Systems with Continuous Translational Symmetries</title>
@@ -84,47 +60,6 @@ phi = (L<span style="color:#f92672">/</span>N)<span style="color:#f92672">*</spa
         </item>
         
         <item>
-            <title>Research Update September 20</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</link>
-            <pubDate>Fri, 20 Sep 2019 13:17:20 -0400</pubDate>
-            
-            <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-20/</guid>
-            <description>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space.</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Using the quotient method as referenced in my previous update was unsuccesful. The dynamically relevant modes are rather different between the high-dissipation and low-dissipation lobes of the attractor. Modes that are common to both lobes tend to have pass through zero throughout the transitions between lobes, causing sparatic behavior in the quotienting method. There are well developed methods to bypass this issue in the literature, such as <a href="http://www.cns.gatech.edu/~predrag/papers/atlas12.pdf">forming an atlas of charts on the full space, each chart describing a specific way to reduce the symmetry of its own section of the full space</a>. These methods are beautifully rigorous, but often hard to implement numerically in a way that doesn&rsquo;t require human supervision.</p>
-<p>To overcome this hurdle, I developed a fast numerical method for <a href="https://jpughesanford.github.io/posts/2019/09/numerical-scheme-for-recurrence-in-systems-with-continuous-translational-symmetries/">determining the minimum distance between states in systems with arbitrarily many continuous symmetries</a>. This method performs as quickly as the true symmetry reduction method proposed by Predrag. In addition, this method is state-independent, meaning that it will work well regardless of what modes are relevant, or where we are in phase space.</p>
-<p>Using this method, I have generated a plethora of states that corresponds to close passes to exact coherent structures in my system. One close pass, in particular, seems to pass close to a relative periodic orbit that has sections in both the high dissipation and low dissipation regimes. Therefore, any trajectory that saddles this orbit will be a trajectory that exhibits an extreme event. I am coverging this solution using direct-adjoint iterations as I type this.</p>
-<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Research Update September 13</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</link>
-            <pubDate>Sat, 14 Sep 2019 21:16:25 -0400</pubDate>
-            
-            <guid>https://jpughesanford.github.io/posts/2019/09/research-update-september-13/</guid>
-            <description>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).
-The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation.</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>The majority of this weeks work was understanding the mechanism behind extreme events in the 2D Kolmogorov flow. These extreme are charactierized by short lived bursts ($\sim .3\ Jkg^{-1}s^{-1}$) in dissipation far above its expected value ($\sim .1\ Jkg^{-1}s^{-1}$).</p>
-<p>The laminar state is possibly one of the most highly dissipitive states on the attractor, scaling as $\frac{1}{32}Re$ in my particular setup. Above $Re\sim10-20$, this state becomes unstable to states with lower dissipation. Understanding the state space structures that allow for excursions back into the high-dissipation/close-to-laminar regime are crucial.</p>
-<p>The search for coherent structures to date begins with reccurence diagrams and these needs to be run on long, long turbulent trajectories. In order to expand the search for relative periodic orbits, these need to calculate
-$$\min_{l\in[0,2\pi)} ||u(x,t)-T_l\ u(x,t-\tau)||^2$$
-where $T$ is the translation operator along some continuous symmetry. This can obviously become quite computationally expensive, and to combat this bottle, Predrag Cvitanović came up with a method to <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.114.084102">quotient out the continous symmetry</a>. The issue with this method is that is requires knowledge of a &ldquo;relevant&rdquo;, non-zero mode throughout the trajectory. It is quite difficult to choose such a mode in practice, as the relevant modes change often over the course of a turbulent trajectory, leading to artifacts in the reccurence plots that detract from finding structures.</p>
-<p>In search of finding this relevant mode, I binned the state into high-dissipation and low-dissipation bins and plotted their average wavenumber (upper row) and velocity (lower row) fields.</p>
-<!-- raw HTML omitted -->
-<p>Despite these issues with recurrence, three new equilibria were found in the high-dissipation regime, along with a pre-periodic orbit (shown below). Due to the high state space speed that we observe in the dissipitive regime, I doubt that these equilibria will be relevant to finding the transition mechanism causing extreme events. Orbits, and the connections between them, are much more likely candidates.</p>
-<!-- raw HTML omitted -->
-<p>Be sure to search by the tag <a href="/tags/researchupdate/">#researchupdate</a> to see more posts like this!</p>
-]]></content>
-        </item>
-        
-        <item>
             <title>An Intuitive Interpretation of Reynolds Number in Turbulence</title>
             <link>https://jpughesanford.github.io/posts/2019/09/an-intuitive-interpretation-of-reynolds-number-in-turbulence/</link>
             <pubDate>Fri, 13 Sep 2019 14:08:45 -0400</pubDate>
@@ -174,21 +109,6 @@ $$Re = Re^\frac{1}{4}Re^\frac{3}{4} = \frac{d_{max}}{d_{min}} \frac{u_{max}}{u_{
 <strong>In turbulence Reynolds, number is the ratio of the angular momenta between the largest eddies accessible to the system and the smallest.</strong></p>
 <p>Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
 <p>A large portion of this work was inspired by <a href="http://www.dartmouth.edu/~cushman/courses/engs250/Kolmogorov.pdf">work done by Benoit Cushman-Roison</a> at Dartmouth College.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>My First Post</title>
-            <link>https://jpughesanford.github.io/posts/2019/09/my-first-post/</link>
-            <pubDate>Sun, 08 Sep 2019 21:22:00 -0400</pubDate>
-            
-            <guid>https://jpughesanford.github.io/posts/2019/09/my-first-post/</guid>
-            <description>I finally got GitHub working as a host for the site! Starting this Friday, I&amp;rsquo;m going to start posting weekly research updates (#researchupdate), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&amp;rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (#educational).</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>I finally got GitHub working as a host for the site! Starting this Friday, I&rsquo;m going to start posting weekly research updates (<a href="/tags/researchupdate/">#researchupdate</a>), to both track my progress and work on my techinical writing skills. Certain posts might not be made public right away, but as soon as the research that it concerns is published, y&rsquo;all will get to read it. In addition to that, I plan on posting fun and interesting concepts or derivations I learn along the way under the tag (<a href="/tags/educational/">#educational</a>).</p>
-<p>I even got $$equations$$ working.</p>
 ]]></content>
         </item>
         
