@@ -52,10 +52,10 @@ intuitively, $F(l)$ now tells you the fraction of $v(x)$ that lies along $u(x-l)
 <!-- raw HTML omitted -->
 <p>This methods allows for a rapid minimization over the continuous translational symmetry. In my code, this method had a speedup of x60 over the usual brute force approach. Furthermore, this method extends to arbitrarily many symmetry directions, allowing for the possibility of minimizing over time as well, if one were to, say, need to find the minimal distance between two periodic orbits.</p>
 <p>In matlab, on a domain of length L with N gridpoints,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-matlab" data-lang="matlab">F = fft(conj(fft(u<span style="color:#f92672">/</span>norm(u)))<span style="color:#f92672">.*</span>fft(v<span style="color:#f92672">/</span>norm(v))))
-[<span style="color:#f92672">~</span>,index] = max(F)
-phi = (L<span style="color:#f92672">/</span>N)<span style="color:#f92672">*</span>(index<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-matlab" data-lang="matlab"><span style="display:flex;"><span>F = fft(conj(fft(u<span style="color:#f92672">/</span>norm(u)))<span style="color:#f92672">.*</span>fft(v<span style="color:#f92672">/</span>norm(v))))
+</span></span><span style="display:flex;"><span>[<span style="color:#f92672">~</span>,index] = max(F)
+</span></span><span style="display:flex;"><span>phi = (L<span style="color:#f92672">/</span>N)<span style="color:#f92672">*</span>(index<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>Thank you for reading. Be sure to search by the tag <a href="/tags/educational/">#educational</a> to see more posts like this!</p>
 ]]></content>
         </item>
         
