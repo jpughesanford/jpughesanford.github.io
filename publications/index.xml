@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Joshua Pughe-Sanford</title>
+    <link>https://jpughesanford.github.io/publications/</link>
+    <description>Recent content in Publications on Joshua Pughe-Sanford</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jpughesanford.github.io/publications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linear approximations to HMM filtering</title>
+      <link>https://jpughesanford.github.io/publications/mah2026/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/mah2026/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Degree-Of-Freedom and Optimization Dynamic Effects on the Observability of the Kuramoto-Sivashinsky Model</title>
+      <link>https://jpughesanford.github.io/publications/noah2025/</link>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/noah2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>The neuron as a feedback controller of stochastic dynamics</title>
+      <link>https://jpughesanford.github.io/publications/sagodi2025/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/sagodi2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>A network of biologically inspired Rectified Spectral Units (ReSUs) learns hierarchical features without error backpropagation</title>
+      <link>https://jpughesanford.github.io/publications/qin2025/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/qin2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Neurons as Detectors of Coherent Sets in Sensory Dynamics</title>
+      <link>https://jpughesanford.github.io/publications/chklovskii2025/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/chklovskii2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computing chaotic time-averages from few periodic or non-periodic orbits</title>
+      <link>https://jpughesanford.github.io/publications/pughesanford2025/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/pughesanford2025/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>The Neuron as a Direct Data-Driven Controller</title>
+      <link>https://jpughesanford.github.io/publications/moore2024/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/moore2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>On the Generalization of Shadowing to Fluid Turbulence: Practical Methods For Quantifying Dynamical Similarity</title>
+      <link>https://jpughesanford.github.io/publications/pughesanford2023/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/pughesanford2023/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Observing a dynamical skeleton of turbulence in Taylor–Couette flow experiments</title>
+      <link>https://jpughesanford.github.io/publications/crowley2023/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/crowley2023/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Turbulence tracks recurrent solutions</title>
+      <link>https://jpughesanford.github.io/publications/crowley2022/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/crowley2022/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exact coherent structures and shadowing in turbulent Taylor–Couette flow</title>
+      <link>https://jpughesanford.github.io/publications/krygier2021/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/krygier2021/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Properties of Quantum Walks within Various One Dimensional Media</title>
+      <link>https://jpughesanford.github.io/publications/pughesanford2017/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/pughesanford2017/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Renormalization of Discrete-Time Quantum Walks with non-Grover Coins</title>
+      <link>https://jpughesanford.github.io/publications/boettcher2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/publications/boettcher2017/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

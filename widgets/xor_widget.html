@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=STIX+Two+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #1c1c1e;
+      --ink2:   #44444a;
+      --ink3:   #8a8a90;
+      --surface: #ffffff;
+      --node-fill:  #f2f2f7;
+      --node-ring:  #d6d6d8;
+      --act-fill:   #007aff;
+      --act-glow:   rgba(0,122,255,0.24);
+      --edge-col:   #c4c4d8;
+      --seg-bg:     #eaeaef;
+      --pill-bg:    #eeeef3;
+      --pill-ring:  #d8d8dc;
+      --alice:      #00897b;
+      --alice-dark: #00695c;
+      --alice-bg:   #e0f5f2;
+      --alice-act:  #b2dfdb;
+      --alice-bd:   #5ab8b0;
+      --alice-glow: rgba(0,137,123,0.28);
+      --bob:        #e65100;
+      --bob-dark:   #bf360c;
+      --bob-bg:     #fff3e0;
+      --bob-act:    #ffccbc;
+      --bob-bd:     #f09060;
+      --bob-glow:   rgba(230,81,0,0.24);
+    }
+    html.dark {
+      --ink:    #f5f5f7;
+      --ink2:   #aeaeb2;
+      --ink3:   #636366;
+      --surface: #1c1c1e;
+      --node-fill:  #2c2c2e;
+      --node-ring:  #3c3c44;
+      --act-fill:   #0a84ff;
+      --act-glow:   rgba(10,132,255,0.30);
+      --edge-col:   #505068;
+      --seg-bg:     #3c3c48;
+      --pill-bg:    #383844;
+      --pill-ring:  #424252;
+      /* alice/bob: same hues as light mode, brightened for dark-bg legibility */
+      --alice:      #26a69a;
+      --alice-dark: #80cbc4;
+      --alice-bd:   #1e7870;
+      --alice-glow: rgba(38,166,154,0.38);
+      --bob:        #f4511e;
+      --bob-dark:   #ff8a65;
+      --bob-bd:     #8c3a18;
+      --bob-glow:   rgba(244,81,30,0.32);
+    }
+
+    body {
+      background: transparent;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0 10px;
+    }
+
+    /* ── Top segmented control ── */
+    .seg {
+      display: flex;
+      align-items: center;
+      background: var(--seg-bg);
+      border-radius: 12px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .seg-btn {
+      padding: 7px 22px;
+      border-radius: 9px;
+      border: none;
+      background: transparent;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink3);
+      cursor: pointer;
+      transition: background 0.22s, color 0.22s, box-shadow 0.22s;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .seg-btn.active {
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.14), 0 0.5px 1px rgba(0,0,0,0.10);
+    }
+    .seg-btn.active[data-mode="alice"] { color: var(--alice-dark); }
+    .seg-btn.active[data-mode="bob"]   { color: var(--bob-dark); }
+
+    /* ── SVG canvas ── */
+    .viz { width: 100%; }
+    .viz svg { display: block; }
+
+    /* ── Network edges ── */
+    .edge {
+      fill: none;
+      stroke: var(--edge-col);
+      stroke-width: 2.2;
+      transition: opacity 0.28s ease;
+    }
+    .edge[data-to="y"] { transition: d 0.38s ease, opacity 0.28s ease; }
+
+    /* ── Circle node body ── */
+    .nc {
+      fill: var(--node-fill);
+      stroke: var(--node-ring);
+      stroke-width: 1.5;
+      transition: fill 0.28s, stroke 0.28s, filter 0.28s;
+    }
+    .ng.active .nc {
+      fill: var(--act-fill);
+      stroke: var(--act-fill);
+      stroke-width: 0;
+      filter: drop-shadow(0 2px 12px var(--act-glow));
+    }
+    /* ── Hairline divider inside circle ── */
+    .nc-div {
+      stroke: var(--node-ring);
+      stroke-width: 0.75;
+      transition: stroke 0.28s;
+    }
+    .ng.active .nc-div { stroke: rgba(255,255,255,0.18); }
+
+    /* ── Math label inside circle (top half) ── */
+    .lbl-inner {
+      font-family: 'STIX Two Text', Georgia, serif;
+      font-style: italic;
+      font-size: 21px;
+      fill: var(--ink2);
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      transition: fill 0.28s;
+    }
+    .ng.active .lbl-inner { fill: #ffffff; }
+
+    /* ── Value display inside circle (bottom half) ── */
+    .nv-inner {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      fill: var(--ink);
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      transition: fill 0.28s;
+    }
+    .ng.active .nv-inner { fill: #ffffff; }
+
+    /* ── Pill-track slider (input nodes x₁, x₂) ── */
+    .inp-track {
+      fill: var(--pill-bg);
+      stroke: var(--pill-ring);
+      stroke-width: 1.2;
+      transition: fill 0.28s, stroke 0.28s, filter 0.28s;
+    }
+    .ng.active .inp-track {
+      fill: #eaf2ff;
+      stroke: #a8ccf5;
+    }
+    html.dark .ng.active .inp-track {
+      fill: #1a2a42;
+      stroke: #3d6aaa;
+    }
+    /* The thumb group slides within the track */
+    .inp-thumb {
+      transform: translateX(-46px);
+      transition: transform 0.42s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .ng.active .inp-thumb { transform: translateX(46px); }
+    /* Value text inside input thumb */
+    .inp-nv {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      fill: var(--ink);
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      transition: fill 0.28s;
+    }
+    .ng.active .inp-nv { fill: #ffffff; }
+    /* Hover on the input pill */
+    .ng.clickable { cursor: pointer; }
+    .ng.clickable:hover .inp-track {
+      stroke: rgba(0,122,255,0.40);
+      filter: drop-shadow(0 0 6px var(--act-glow));
+    }
+    /* Input label above the pill */
+    .inp-lbl {
+      font-family: 'STIX Two Text', Georgia, serif;
+      font-style: italic;
+      font-size: 20px;
+      fill: var(--ink);
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+
+    /* ── Signal pill boxes (interpretation) ── */
+    .sig-pill-rect { transition: fill 0.28s, stroke 0.28s, filter 0.28s; }
+    .alice-pill .sig-pill-rect { fill: var(--node-fill); stroke: var(--alice-bd); stroke-width: 1.5; }
+    .alice-pill.active .sig-pill-rect {
+      fill: var(--alice); stroke: var(--alice); stroke-width: 2;
+      filter: drop-shadow(0 2px 12px var(--alice-glow));
+    }
+    .bob-pill .sig-pill-rect { fill: var(--node-fill); stroke: var(--bob-bd); stroke-width: 1.5; }
+    .bob-pill.active .sig-pill-rect {
+      fill: var(--bob); stroke: var(--bob); stroke-width: 2;
+      filter: drop-shadow(0 2px 12px var(--bob-glow));
+    }
+    .sig-fml {
+      font-family: 'STIX Two Text', serif; font-style: italic;
+      font-size: 21px; text-anchor: middle; dominant-baseline: central;
+      pointer-events: none; transition: fill 0.28s;
+    }
+    .alice-pill .sig-fml { fill: var(--alice-dark); }
+    .bob-pill .sig-fml   { fill: var(--bob-dark); }
+    .alice-pill.active .sig-fml, .bob-pill.active .sig-fml { fill: #ffffff; }
+    .sig-val {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px; font-weight: 700;
+      text-anchor: middle; dominant-baseline: central;
+      pointer-events: none; transition: fill 0.28s;
+    }
+    .alice-pill .sig-val { fill: var(--alice); }
+    .bob-pill .sig-val   { fill: var(--bob); }
+    .alice-pill.active .sig-val, .bob-pill.active .sig-val { fill: #ffffff; }
+    .alice-pill.active .pill-div, .bob-pill.active .pill-div { stroke: rgba(255,255,255,0.18); }
+
+    /* ── Hairline divider inside signal pill ── */
+    .pill-div {
+      stroke: var(--pill-ring);
+      stroke-width: 0.75;
+      transition: stroke 0.28s;
+    }
+
+    /* ── Labels above Y node ── */
+    #y-computes-lbl, #y-gate-lbl {
+      text-anchor: middle;
+      dominant-baseline: central;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      pointer-events: none;
+    }
+    #y-computes-lbl {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 21px;
+    }
+    #y-gate-lbl {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+    }
+
+    /* ── Pill fade-in animation ── */
+    @keyframes pillIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .sig-box { animation: pillIn 0.30s ease both; }
+
+    /* ── Interpretation overlay paths ── */
+    .ipath { fill: none; stroke-width: 2.8; stroke-linecap: round; opacity: 0.45; }
+
+    /* ── Overlay group fade ── */
+    #overlay { transition: opacity 0.22s ease; }
+    #overlay.hiding { opacity: 0; pointer-events: none; }
+
+    /* ── Output node wrapper (slides in interpretation mode) ── */
+    #outwrap { transition: transform 0.38s ease; }
+  </style>
+</head>
+<body>
+
+<div class="seg" id="seg">
+  <button class="seg-btn active" data-mode="none">Uninterpreted</button>
+  <button class="seg-btn" data-mode="alice">Alice</button>
+  <button class="seg-btn" data-mode="bob">Bob</button>
+</div>
+
+<div class="viz">
+  <svg id="svg" viewBox="0 0 980 500" xmlns="http://www.w3.org/2000/svg">
+    <g id="edges"></g>
+    <g id="overlay"><g id="ipaths"></g><g id="ipills"></g></g>
+    <g id="nodes"></g>
+  </svg>
+</div>
+
+<script>
+// ── Theme sync ────────────────────────────────────────────────────────────────
+(function(){
+  function apply(){ document.documentElement.classList.toggle('dark', localStorage.getItem('theme')==='dark'); }
+  apply();
+  window.addEventListener('storage', e => { if(e.key==='theme') apply(); });
+})();
+
+// ── Layout ────────────────────────────────────────────────────────────────────
+const NR = 46;        // hidden/output node radius
+const TR = 40;        // input thumb circle radius
+const TW = 184;       // input pill track width
+const TH = 88;        // input pill track height  (= 2*TR + 8px margin)
+const TRX = 44;       // input pill track corner radius
+
+const YX_NORM   = 610;
+const YX_INTERP = 860;
+
+// Node centres [x, y]
+const P = {
+  x1: [110, 168],
+  x2: [110, 332],
+  h1: [360,  90],
+  h3: [360, 250],
+  h2: [360, 410],
+  y:  [YX_NORM, 250],
+};
+
+// Signal pill geometry
+const PW = 172, PH = 88, PRX = 44;
+// Signal pill centres — vertically aligned with x1, x2
+const SP = { s1: [YX_NORM, 168], s2: [YX_NORM, 332] };
+
+// ── State ─────────────────────────────────────────────────────────────────────
+const S = { x1: 0, x2: 0, mode: 'none' };
+
+// ── Math ──────────────────────────────────────────────────────────────────────
+const sig = z => 1 / (1 + Math.exp(-25 * z));
+function compute(x1, x2) {
+  const h1 = sig(x1 - 0.5);
+  const h2 = sig(x2 - 0.5);
+  const h3 = sig(x1 + x2 - 1.5);
+  const y  = sig(h1 + h2 - 2*h3 - 0.5);
+  return { h1, h2, h3, y };
+}
+
+// ── Bezier S-curve ─────────────────────────────────────────────────────────────
+function bezD(x1, y1, x2, y2) {
+  const mx = (x1 + x2) / 2;
+  return `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+}
+
+// ── Build edges ───────────────────────────────────────────────────────────────
+function buildEdges() {
+  const links = [
+    ['x1','h1'], ['x1','h3'],
+    ['x2','h3'], ['x2','h2'],
+    ['h1','y'],  ['h3','y'],  ['h2','y'],
+  ];
+  document.getElementById('edges').innerHTML = links.map(([a, b]) => {
+    const [bx, by] = P[b];
+    // Source: right edge of node at its vertical center
+    const fx = (a === 'x1' || a === 'x2') ? P[a][0] + TW / 2 : P[a][0] + NR;
+    const fy = P[a][1];
+    // Target: left edge of node at its vertical center
+    const tx = bx - NR, ty = by;
+
+    const isY = b === 'y';
+    const nd = bezD(fx, fy, tx, ty);
+    const id = isY ? bezD(fx, fy, YX_INTERP - NR, by) : '';
+    return `<path class="edge" data-to="${b}" ${isY ? `data-nd="${nd}" data-id="${id}"` : ''} d="${nd}"/>`;
+  }).join('');
+}
+
+// ── Circle node helper ────────────────────────────────────────────────────────
+function circleNode(id, labelHTML, cx, cy, extra='') {
+  return `<g id="ng-${id}" class="ng${extra}" transform="translate(${cx},${cy})">
+    <circle class="nc" r="${NR}"/>
+    <line class="nc-div" x1="-40" y1="2" x2="40" y2="2"/>
+    <text class="lbl-inner" y="-13">${labelHTML}</text>
+    <text id="nv-${id}" class="nv-inner" y="17">0</text>
+  </g>`;
+}
+
+// ── Build nodes ───────────────────────────────────────────────────────────────
+function buildNodes() {
+  let html = '';
+  const hw = TW / 2, hh = TH / 2;
+
+  // Input nodes: pill-track slider with circle thumb
+  for (const id of ['x1', 'x2']) {
+    const [cx, cy] = P[id];
+    const sub = id === 'x1' ? '1' : '2';
+    html += `<g id="ng-${id}" class="ng clickable" onclick="flip('${id}')" transform="translate(${cx},${cy})">
+      <rect class="inp-track" x="${-hw}" y="${-hh}" width="${TW}" height="${TH}" rx="${TRX}"/>
+      <g class="inp-thumb">
+        <circle class="nc" r="${TR}"/>
+        <line class="nc-div" x1="-34" y1="2" x2="34" y2="2"/>
+        <text class="lbl-inner" y="-11">x<tspan font-size="12" dy="6">${sub}</tspan></text>
+        <text id="nv-${id}" class="inp-nv" y="14">0</text>
+      </g>
+    </g>`;
+  }
+
+  // Hidden nodes
+  const HSUB = { h1: '1', h3: '3', h2: '2' };
+  for (const id of ['h1', 'h3', 'h2']) {
+    const [cx, cy] = P[id];
+    html += circleNode(id, `h<tspan font-size="13" dy="7">${HSUB[id]}</tspan>`, cx, cy);
+  }
+
+  // Output node (wrapped for slide)
+  const [yx, yy] = P.y;
+  html += `<g id="outwrap">
+    ${circleNode('y', 'y', yx, yy)}
+    <text id="y-computes-lbl" x="${yx}" y="${yy - NR - 56}">computes</text>
+    <text id="y-gate-lbl"     x="${yx}" y="${yy - NR - 32}"></text>
+  </g>`;
+
+  document.getElementById('nodes').innerHTML = html;
+}
+
+// ── Overlay ───────────────────────────────────────────────────────────────────
+function drawOverlay() {
+  const pathG = document.getElementById('ipaths');
+  const pillG = document.getElementById('ipills');
+  if (S.mode === 'none') { pathG.innerHTML = ''; pillG.innerHTML = ''; return; }
+
+  const m = S.mode, col = `var(--${m})`;
+  const [s1x, s1y] = [SP.s1[0], SP.s1[1]];
+  const [s2x, s2y] = [SP.s2[0], SP.s2[1]];
+  const ox = YX_INTERP, oy = P.y[1];
+  const hw = PW / 2;
+  let paths = '', pills = '';
+
+  // h right-center → pill left-center
+  const hToPill = (hx, hy, sx, sy) => ipath(hx + NR, hy, sx - hw, sy, col);
+  // pill right-center → output left-center
+  const pillToOut = (sx, sy) => ipath(sx + hw, sy, ox - NR, oy, col);
+
+  if (m === 'alice') {
+    paths += hToPill(P.h1[0], P.h1[1], s1x, s1y);
+    paths += hToPill(P.h3[0], P.h3[1], s1x, s1y);
+    paths += hToPill(P.h2[0], P.h2[1], s2x, s2y);
+    paths += hToPill(P.h3[0], P.h3[1], s2x, s2y);
+    paths += pillToOut(s1x, s1y);
+    paths += pillToOut(s2x, s2y);
+    pills += pill(s1x, s1y, 'h₁ − h₃', 'v-a1', 'alice-pill');
+    pills += pill(s2x, s2y, 'h₂ − h₃', 'v-a2', 'alice-pill');
+  } else {
+    paths += hToPill(P.h3[0], P.h3[1], s1x, s1y);
+    paths += hToPill(P.h1[0], P.h1[1], s2x, s2y);
+    paths += hToPill(P.h2[0], P.h2[1], s2x, s2y);
+    paths += hToPill(P.h3[0], P.h3[1], s2x, s2y);
+    paths += pillToOut(s1x, s1y);
+    paths += pillToOut(s2x, s2y);
+    pills += pill(s1x, s1y, '1 − h₃', 'v-b1', 'bob-pill');
+    pills += pill(s2x, s2y, 'h₁ + h₂ − h₃', 'v-b2', 'bob-pill');
+  }
+
+  pathG.innerHTML = paths;
+  pillG.innerHTML = pills;
+}
+
+function ipath(x1, y1, x2, y2, color) {
+  return `<path class="ipath" d="${bezD(x1,y1,x2,y2)}" style="stroke:${color}"/>`;
+}
+
+function pill(cx, cy, formula, valId, cls) {
+  const hw = PW/2, hh = PH/2;
+  return `<g transform="translate(${cx},${cy})">
+    <g id="sigbox-${valId}" class="sig-box ${cls}">
+      <rect class="sig-pill-rect" x="${-hw}" y="${-hh}" width="${PW}" height="${PH}" rx="${PRX}"/>
+      <text class="sig-fml" y="-12">${formula}</text>
+      <line class="pill-div" x1="${-hw+16}" y1="2" x2="${hw-16}" y2="2"/>
+      <text id="${valId}" class="sig-val" y="16">0</text>
+    </g>
+  </g>`;
+}
+
+// ── Update ────────────────────────────────────────────────────────────────────
+function update() {
+  const v = compute(S.x1, S.x2);
+
+  // Input nodes
+  for (const id of ['x1', 'x2']) {
+    const on = !!S[id];
+    document.getElementById(`ng-${id}`).classList.toggle('active', on);
+    document.getElementById(`nv-${id}`).textContent = on ? '1' : '0';
+  }
+
+  // Hidden nodes
+  for (const id of ['h1', 'h2', 'h3']) {
+    const val = Math.round(v[id]);
+    document.getElementById(`ng-${id}`).classList.toggle('active', val === 1);
+    document.getElementById(`nv-${id}`).textContent = val;
+  }
+
+  // Output node
+  const ry = Math.round(v.y);
+  document.getElementById('ng-y').classList.toggle('active', ry === 1);
+  document.getElementById('nv-y').textContent = ry;
+
+  // Signal pills
+  if (S.mode === 'alice') {
+    const a1 = Math.round(v.h1 - v.h3), a2 = Math.round(v.h2 - v.h3);
+    setBoxActive('sigbox-v-a1', a1 === 1); setVal('v-a1', a1);
+    setBoxActive('sigbox-v-a2', a2 === 1); setVal('v-a2', a2);
+  } else if (S.mode === 'bob') {
+    const b1 = Math.round(1 - v.h3), b2 = Math.round(v.h1 + v.h2 - v.h3);
+    setBoxActive('sigbox-v-b1', b1 === 1); setVal('v-b1', b1);
+    setBoxActive('sigbox-v-b2', b2 === 1); setVal('v-b2', b2);
+  }
+}
+
+function setVal(id, val) { const el = document.getElementById(id); if(el) el.textContent = val; }
+function setBoxActive(id, on) { const el = document.getElementById(id); if(el) el.classList.toggle('active', on); }
+
+// ── Input toggle ──────────────────────────────────────────────────────────────
+window.flip = function(id) { S[id] = S[id] ? 0 : 1; update(); };
+
+// ── Mode switch ───────────────────────────────────────────────────────────────
+document.getElementById('seg').addEventListener('click', e => {
+  const btn = e.target.closest('.seg-btn');
+  if (!btn) return;
+  const prev = S.mode;
+  S.mode = btn.dataset.mode;
+  if (S.mode === prev) return;
+
+  document.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+  const outwrap = document.getElementById('outwrap');
+  const gateLbl = document.getElementById('y-gate-lbl');
+  const computesLbl = document.getElementById('y-computes-lbl');
+  const interp = S.mode !== 'none';
+
+  outwrap.style.transform = interp ? `translateX(${YX_INTERP - YX_NORM}px)` : 'translateX(0)';
+
+  document.querySelectorAll('.edge[data-to="y"]').forEach(el => {
+    el.style.d = `path("${interp ? el.dataset.id : el.dataset.nd}")`;
+    el.style.opacity = interp ? '0.04' : '1';
+  });
+
+  if (interp) {
+    const col = `var(--${S.mode}-dark)`;
+    if (gateLbl)     { gateLbl.textContent = S.mode === 'alice' ? 'OR' : 'AND'; gateLbl.style.fill = col; gateLbl.style.opacity = '1'; }
+    if (computesLbl) { computesLbl.style.fill = col; computesLbl.style.opacity = '1'; }
+  } else {
+    if (gateLbl)     gateLbl.style.opacity = '0';
+    if (computesLbl) computesLbl.style.opacity = '0';
+  }
+
+  drawOverlay();
+  update();
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+buildEdges();
+// Seed the CSS d property so transitions have a valid starting value
+document.querySelectorAll('.edge[data-to="y"]').forEach(el =>
+  el.style.d = `path("${el.getAttribute('d')}")`
+);
+buildNodes();
+update();
+
+// Auto-resize: tell the parent iframe our true height whenever it changes
+(function() {
+  function emit() {
+    window.parent.postMessage({ iframeHeight: document.documentElement.scrollHeight }, '*');
+  }
+  new ResizeObserver(emit).observe(document.body);
+  emit();
+})();
+</script>
+</body>
+</html>
