@@ -114,6 +114,13 @@
       <description></description>
     </item>
     <item>
+      <title>Old Papers from Advanced Lab</title>
+      <link>https://jpughesanford.github.io/posts/2017/05/old-papers-from-advanced-lab/</link>
+      <pubDate>Mon, 01 May 2017 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/posts/2017/05/old-papers-from-advanced-lab/</guid>
+      <description>&lt;p&gt;I recently found an old hard drive containing files from my undergraduate years. Among them were two advanced lab projects that I am still genuinely proud of. I am deeply grateful to Emory University for supporting experimental courses of this kind, and especially to &lt;a href=&#34;https://physics.emory.edu/people/bios/brody-jed.html&#34;&gt;Dr. Jed Brody&lt;/a&gt;: an exceptional teacher and communicator who clearly poured enormous effort into making these labs so special.&lt;/p&gt;&#xA;&lt;h3 id=&#34;project-1-realizing-the-lorenz-equations-with-an-electrical-circuit&#34;&gt;Project 1: Realizing the Lorenz equations with an electrical circuit&lt;/h3&gt;&#xA;&lt;p&gt;Differential equations can be quite taxing to simulate numerically, especially when the temporal resolution needs to be fine. In some cases, however, physics can perform the computation for us. Electrical circuits are themselves governed by differential equations, with resistors, capacitors, and inductors acting as the effective coefficients of the system. By carefully tuning these components, one can engineer a circuit whose dynamics obey a chosen set of equations; rather than simulating the dynamics digitally, the solution can be measured directly from the circuit voltages in real time. In &lt;a href=&#34;https://jpughesanford.github.io/pdf/lorenzcircuit.pdf&#34;&gt;this write up&lt;/a&gt;, I design and construct an analog electrical circuit that realizes the Lorenz equations, a canonical example of chaos.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Renormalization of Discrete-Time Quantum Walks with non-Grover Coins</title>
       <link>https://jpughesanford.github.io/publications/boettcher2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
