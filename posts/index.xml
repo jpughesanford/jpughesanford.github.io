@@ -5,15 +5,40 @@
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <lastBuildDate>Mon, 12 May 2025 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Paper Spotlight: Is interpreting neural networks mathematically well-defined?</title>
-            <link>https://jpughesanford.github.io/posts/2025/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</link>
-            <pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate>
+            <title>Introducing Underleaf! An offline editor for Overleaf with Git integration.</title>
+            <link>https://jpughesanford.github.io/posts/2026/05/introducing-underleaf-an-offline-editor-for-overleaf-with-git-integration./</link>
+            <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://jpughesanford.github.io/posts/2025/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</guid>
+            <guid>https://jpughesanford.github.io/posts/2026/05/introducing-underleaf-an-offline-editor-for-overleaf-with-git-integration./</guid>
+            <description>&lt;p&gt;I do a lot of writing on planes. Or at least I&amp;rsquo;d like to. But many of my manuscripts and technical notes live on Overleaf and, as soon as I leave wifi, they become inaccessible.&lt;/p&gt;
+&lt;p&gt;Although Overleaf Premium allows projects to be cloned locally via Git, I&amp;rsquo;ve always found the transition between Overleaf and local editing jarring. Managing dozens of repositories on my machine quickly got out of hand. At least for me. What I wanted was something that felt like Overleaf, worked online and offline, and made the transition between the two feel as seamless as possible.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I do a lot of writing on planes. Or at least I&rsquo;d like to. But many of my manuscripts and technical notes live on Overleaf and, as soon as I leave wifi, they become inaccessible.</p>
+<p>Although Overleaf Premium allows projects to be cloned locally via Git, I&rsquo;ve always found the transition between Overleaf and local editing jarring. Managing dozens of repositories on my machine quickly got out of hand. At least for me. What I wanted was something that felt like Overleaf, worked online and offline, and made the transition between the two feel as seamless as possible.</p>
+<p>There are reasons Overleaf has not done this already. If collaborators continue editing a project while you&rsquo;re offline, synchronization and merge conflicts arise. While delicate, these seemed like tractable issues.</p>
+<p>Underleaf is an app I&rsquo;ve been wanting others to make for quite some time. With the state of LLMs these days, I was able to ask one to build the app for me. I take zero credit for the result. I&rsquo;m open sourcing it in case others find it interesting. If you find it useful, great. If you want to fork it and improve it, even better. If you file an issue, I may eventually get around to it. But at least for now, this isn&rsquo;t a project I plan to actively maintain.</p>
+<p><img src="/img/underleaf-intro/splash.webp" alt="The Underleaf welcome screen"></p>
+<p>Underleaf is a desktop app for macOS that looks and works like Overleaf, but everything persists locally. Point it at an &ldquo;Overleaf&rdquo; folder and every LaTeX project inside appears on a dashboard. The dashboard displays the state of all projects in the Overleaf folder, at a glance. Projects can be <em>synced</em>, <em>ahead</em> or <em>behind</em> their remote, in <em>conflict</em>, or local, which does not have a badge.</p>
+<p><img src="/img/underleaf-intro/dashboard.webp" alt="The Underleaf project dashboard, showing several LaTeX projects with their git sync status"></p>
+<p>Opening a project drops you into the editor: utility panels on the left, LaTeX source in the center, and a compiled PDF on the right. Just like Overleaf. Syntax highlighting, command autocompletion, clickable links in the PDF viewer, light/dark mode and numerous other quality-of-life features are included. Many more are in the works.</p>
+<p>Underleaf includes a Source Control utility panel that mimics the one in VS code. Stage files, write a commit message, or push and pull the repository, all in one place.</p>
+<p><img src="/img/underleaf-intro/editor.webp" alt="The Underleaf editor view, with LaTeX source on the left and the live PDF preview on the right"></p>
+<p>The dashboard and source control panel, taken together, are what make this app useful as an Overleaf companion: before takeoff (or whenever you expect to lose wifi), you sync. This gives you a clear picture of your local state relative to all remote repositories. When you land, you sync again. If collaborators edited the project while you were away, you can resolve any resulting merge conflicts directly within the app.</p>
+<p>You can download the app on the <a href="https://github.com/jpughesanford/underleaf/releases">Releases</a> page of the <a href="https://github.com/jpughesanford/underleaf">Github</a>. The source code is also available there.</p>
+<p>Underleaf is Mac only right now. The first time you open the app, macOS will warn you that it&rsquo;s from an unidentified developer &mdash; which it is. I will not be paying Apple $100 to get a developers license. You can allow the app to be opened in the Privacy &amp; Security settings by scrolling all the way to the bottom and clicking Allow. You only need to do this once. The app requires you to have TeX Live installed locally, which is likely the case if you&rsquo;re editing LaTeX outside of Overleaf. Underleaf will attempt to detect the installation automatically.</p>
+<p>Happy editing!</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Paper Spotlight: Is interpreting neural networks mathematically well-defined?</title>
+            <link>https://jpughesanford.github.io/posts/2026/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</link>
+            <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+            
+            <guid>https://jpughesanford.github.io/posts/2026/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</guid>
             <description>&lt;p&gt;In this post, we examine &lt;a href=&#34;https://openreview.net/forum?id=5IWJBStfU7&#34;&gt;Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?&lt;/a&gt;, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.&lt;/p&gt;
 &lt;p&gt;The authors identify two factors motivating mechanistic interpretability. Namely,&lt;/p&gt;
 &lt;ul&gt;
@@ -118,7 +143,7 @@ $$
 y = \mathrm{XOR}(x_1,x_2) =\mathrm{AND}(\mathrm{NAND}(x_1,x_2),\mathrm{OR}(x_1,x_2)).
 $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and outputs $1$ if both are true.</p>
 <h3 id="moral-of-the-story">Moral of the story</h3>
-<p>The students interpretations are summarized here:</p>
+<p>The students interpretations are summarized in this interactable widget:</p>
 <iframe id="widget-0" src="/widgets/xor_widget.html" width="100%" height="200px" frameborder="0" scrolling="no" style="border:none; display:block;"></iframe>
 <script>
 (function(){

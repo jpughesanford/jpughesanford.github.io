@@ -6,8 +6,22 @@
     <description>Recent content on Joshua Pughe-Sanford</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jpughesanford.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introducing Underleaf! An offline editor for Overleaf with Git integration.</title>
+      <link>https://jpughesanford.github.io/posts/2026/05/introducing-underleaf-an-offline-editor-for-overleaf-with-git-integration./</link>
+      <pubDate>Tue, 26 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/posts/2026/05/introducing-underleaf-an-offline-editor-for-overleaf-with-git-integration./</guid>
+      <description>&lt;p&gt;I do a lot of writing on planes. Or at least I&amp;rsquo;d like to. But many of my manuscripts and technical notes live on Overleaf and, as soon as I leave wifi, they become inaccessible.&lt;/p&gt;&#xA;&lt;p&gt;Although Overleaf Premium allows projects to be cloned locally via Git, I&amp;rsquo;ve always found the transition between Overleaf and local editing jarring. Managing dozens of repositories on my machine quickly got out of hand. At least for me. What I wanted was something that felt like Overleaf, worked online and offline, and made the transition between the two feel as seamless as possible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Paper Spotlight: Is interpreting neural networks mathematically well-defined?</title>
+      <link>https://jpughesanford.github.io/posts/2026/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</link>
+      <pubDate>Tue, 12 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://jpughesanford.github.io/posts/2026/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</guid>
+      <description>&lt;p&gt;In this post, we examine &lt;a href=&#34;https://openreview.net/forum?id=5IWJBStfU7&#34;&gt;Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?&lt;/a&gt;, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.&lt;/p&gt;&#xA;&lt;p&gt;The authors identify two factors motivating mechanistic interpretability. Namely,&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Observations of trained networks&lt;/strong&gt;: &amp;ldquo;Mechanistic interpretability rests on the key assumptions that a neural network&amp;rsquo;s behavior can be explained by a simpler algorithm than the full network, and that a sparse subset of the network executes this algorithm. Previous research has given support to these assumptions: pruning studies and the lottery ticket hypothesis suggest that networks are often overparameterized, and only a fraction of neurons and connections are critical to the final performance.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Linear approximations to HMM filtering</title>
       <link>https://jpughesanford.github.io/publications/mah2026/</link>
@@ -49,13 +63,6 @@
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://jpughesanford.github.io/publications/pughesanford2025/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>Paper Spotlight: Is interpreting neural networks mathematically well-defined?</title>
-      <link>https://jpughesanford.github.io/posts/2025/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</link>
-      <pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://jpughesanford.github.io/posts/2025/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</guid>
-      <description>&lt;p&gt;In this post, we examine &lt;a href=&#34;https://openreview.net/forum?id=5IWJBStfU7&#34;&gt;Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?&lt;/a&gt;, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.&lt;/p&gt;&#xA;&lt;p&gt;The authors identify two factors motivating mechanistic interpretability. Namely,&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Observations of trained networks&lt;/strong&gt;: &amp;ldquo;Mechanistic interpretability rests on the key assumptions that a neural network&amp;rsquo;s behavior can be explained by a simpler algorithm than the full network, and that a sparse subset of the network executes this algorithm. Previous research has given support to these assumptions: pruning studies and the lottery ticket hypothesis suggest that networks are often overparameterized, and only a fraction of neurons and connections are critical to the final performance.&amp;rdquo;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Quick Distance Calculation over Periodic Dimensions via Fourier Transform</title>

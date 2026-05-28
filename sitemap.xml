@@ -3,7 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jpughesanford.github.io/</loc>
-    <lastmod>2026-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jpughesanford.github.io/posts/</loc>
+    <lastmod>2026-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jpughesanford.github.io/posts/2026/05/introducing-underleaf-an-offline-editor-for-overleaf-with-git-integration./</loc>
+    <lastmod>2026-05-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://jpughesanford.github.io/posts/2026/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</loc>
+    <lastmod>2026-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jpughesanford.github.io/publications/mah2026/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
@@ -25,12 +34,6 @@
   </url><url>
     <loc>https://jpughesanford.github.io/publications/pughesanford2025/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/posts/2025/05/paper-spotlight-is-interpreting-neural-networks-mathematically-well-defined/</loc>
-    <lastmod>2025-05-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://jpughesanford.github.io/posts/</loc>
-    <lastmod>2025-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jpughesanford.github.io/posts/2025/02/quick-distance-calculation-over-periodic-dimensions-via-fourier-transform/</loc>
     <lastmod>2025-02-09T00:00:00+00:00</lastmod>
