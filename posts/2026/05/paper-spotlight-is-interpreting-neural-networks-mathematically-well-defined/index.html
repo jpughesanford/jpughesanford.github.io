@@ -29,7 +29,7 @@ Observations of trained networks: &ldquo;Mechanistic interpretability rests on t
 
 
 
-<link rel="stylesheet" href="/main.min.ca27548f55e90ba6f635429f18d69682e5657b63d6d82713a123ef2ddee89c8a.css">
+<link rel="stylesheet" href="/main.min.b31a8dd1da9751a83331142b7d111d1c8a8ad3cc673bed43b904ba2955efb077.css">
 
 
 
@@ -41,16 +41,16 @@ Observations of trained networks: &ldquo;Mechanistic interpretability rests on t
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
 <link rel="shortcut icon" href="/favicon.ico">
 <meta name="theme-color" content="#252627">
-  <meta itemprop="name" content="Paper Spotlight: Is interpreting neural networks mathematically well-defined?">
-  <meta itemprop="description" content="In this post, we examine Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.
+	<meta itemprop="name" content="Paper Spotlight: Is interpreting neural networks mathematically well-defined?">
+	<meta itemprop="description" content="In this post, we examine Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.
 The authors identify two factors motivating mechanistic interpretability. Namely,
 Observations of trained networks: “Mechanistic interpretability rests on the key assumptions that a neural network’s behavior can be explained by a simpler algorithm than the full network, and that a sparse subset of the network executes this algorithm. Previous research has given support to these assumptions: pruning studies and the lottery ticket hypothesis suggest that networks are often overparameterized, and only a fraction of neurons and connections are critical to the final performance.”">
-  <meta itemprop="datePublished" content="2026-05-12T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2026-05-12T00:00:00+00:00">
-  <meta itemprop="wordCount" content="1437">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Paper Spotlight: Is interpreting neural networks mathematically well-defined?">
-  <meta name="twitter:description" content="In this post, we examine Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.
+	<meta itemprop="datePublished" content="2026-05-12T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-05-12T00:00:00+00:00">
+	<meta itemprop="wordCount" content="1437">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Paper Spotlight: Is interpreting neural networks mathematically well-defined?">
+	<meta name="twitter:description" content="In this post, we examine Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?, by Maxime Méloux, François Portet, Silviu Maniu, and Maxime Peyrard. In this work, the authors explore mechanistic interpretability: the act of assigning an algorithmic explanation to the input-output mapping learned by a neural network. All direct quotes are from the manuscript.
 The authors identify two factors motivating mechanistic interpretability. Namely,
 Observations of trained networks: “Mechanistic interpretability rests on the key assumptions that a neural network’s behavior can be explained by a simpler algorithm than the full network, and that a sparse subset of the network executes this algorithm. Previous research has given support to these assumptions: pruning studies and the lottery ticket hypothesis suggest that networks are often overparameterized, and only a fraction of neurons and connections are critical to the final performance.”">
 
@@ -1338,13 +1338,13 @@ $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and 
 <p>The moral of the story is that representing a function as a composition of modular pieces is a mathematically non-unique process. Consequently, so are the narratives we spin about how neural networks function. That is not to say that mechanistic interpretability is not useful. On the contrary, having a narrative that predicts function helps researchers keep pace with the ever-growing complexity of modern AI. It is simply that the narrative, whatever it may be, is likely one of many. In any case, interpretability remains pragmatic: it may not yield a uniquely correct narrative, but it can still reveal when a network has learned the wrong lesson.</p>
 <hr>
 <p>Code for this network can be found here:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sigmoid</span>(x):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>x))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XORNet</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>W1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
 </span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>], 
 </span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>], 
@@ -1442,7 +1442,7 @@ $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and 
 
 
 
-<script type="text/javascript" src="/bundle.min.68b0803b54d1a4c81c15f5565badf41ca7e1f4bf496a0a56f988bc6e8f669ae76c87ee9251197be8981edc5515b588341c9c46d819819f09719b4fa1b4a13ba5.js" integrity="sha512-aLCAO1TRpMgcFfVWW630HKfh9L9JagpW&#43;Yi8bo9mmudsh&#43;6SURl76Jge3FUVtYg0HJxG2BmBnwlxm0&#43;htKE7pQ=="></script>
+<script type="text/javascript" src="/bundle.min.4408e4e5a063d40feb1a375e3473e2502c5d656b993b9b70b2a2825030a769ef7558ad3ef2a9301d6d58d267fa38a3e4c50b5dd2c2cdc9f24b1559eb8dc6ff70.js" integrity="sha512-RAjk5aBj1A/rGjdeNHPiUCxdZWuZO5twsqKCUDCnae91WK0&#43;8qkwHW1Y0mf6OKPkxQtd0sLNyfJLFVnrjcb/cA=="></script>
 
 
 

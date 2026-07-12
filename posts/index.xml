@@ -4,8 +4,8 @@
         <link>https://jpughesanford.github.io/posts/</link>
         <description>Recent content in Posts on Joshua Pughe-Sanford</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en</language>
-        <lastBuildDate>Wed, 27 May 2026 00:00:00 +0000</lastBuildDate>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 26 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://jpughesanford.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
@@ -161,13 +161,13 @@ $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and 
 <p>The moral of the story is that representing a function as a composition of modular pieces is a mathematically non-unique process. Consequently, so are the narratives we spin about how neural networks function. That is not to say that mechanistic interpretability is not useful. On the contrary, having a narrative that predicts function helps researchers keep pace with the ever-growing complexity of modern AI. It is simply that the narrative, whatever it may be, is likely one of many. In any case, interpretability remains pragmatic: it may not yield a uniquely correct narrative, but it can still reveal when a network has learned the wrong lesson.</p>
 <hr>
 <p>Code for this network can be found here:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sigmoid</span>(x):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>x))
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">XORNet</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __init__(self):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self):
 </span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>W1 <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([
 </span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">1.0</span>, <span style="color:#ae81ff">0.0</span>], 
 </span></span><span style="display:flex;"><span>            [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">1.0</span>], 
@@ -223,7 +223,7 @@ $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and 
             <content type="html"><![CDATA[<p>I recently found an old hard drive containing files from my undergraduate years. Among them were two advanced lab projects that I am still genuinely proud of. I am deeply grateful to Emory University for supporting experimental courses of this kind, and especially to <a href="https://physics.emory.edu/people/bios/brody-jed.html">Dr. Jed Brody</a>: an exceptional teacher and communicator who clearly poured enormous effort into making these labs so special.</p>
 <h3 id="project-1-realizing-the-lorenz-equations-with-an-electrical-circuit">Project 1: Realizing the Lorenz equations with an electrical circuit</h3>
 <p>Differential equations can be quite taxing to simulate numerically, especially when the temporal resolution needs to be fine. In some cases, however, physics can perform the computation for us. Electrical circuits are themselves governed by differential equations, with resistors, capacitors, and inductors acting as the effective coefficients of the system. By carefully tuning these components, one can engineer a circuit whose dynamics obey a chosen set of equations; rather than simulating the dynamics digitally, the solution can be measured directly from the circuit voltages in real time. In <a href="/pdf/lorenzcircuit.pdf">this write up</a>, I design and construct an analog electrical circuit that realizes the Lorenz equations, a canonical example of chaos.</p>
-<h3 id="project-2-testing-whether-quantum-mechanics-admits-hidden-variables">Project 2: Testing whether quantum mechanics admits hidden variables </h3>
+<h3 id="project-2-testing-whether-quantum-mechanics-admits-hidden-variables">Project 2: Testing whether quantum mechanics admits hidden variables</h3>
 <p>Quantum mechanics has challenged our intuition for over a century. In the standard interpretation, measurement outcomes are fundamentally probabilistic, and the physical state of a system is described only through probabilities of possible observations. Many physicists, including Albert Einstein, were dissatisfied with this picture and suspected that quantum mechanics might be incomplete.</p>
 <p>This led to the idea of hidden variable theories: the possibility that quantum measurements only appear random because they depend on underlying variables that remain experimentally inaccessible. Since information is believed to not propagate faster than the speed of the light, it is natural to assume that the hidden variable must act locally (that is, without instantaneous influence at a distance). In 1964, John Bell showed that any local hidden variable theory must satisfy a precise mathematical inequality, and experiments inspired by this result are now known as Bell tests. In <a href="/pdf/bell.pdf">this write up</a>, I carry out one such Bell test.</p>
 ]]></content>
