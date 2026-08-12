@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=STIX+Two+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <!-- KaTeX — same version as the parent site, so the table matches the post's math exactly -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -32,6 +35,7 @@
       --bob-act:    #ffccbc;
       --bob-bd:     #f09060;
       --bob-glow:   rgba(230,81,0,0.24);
+      --row-hl:     #eaf2ff;   /* same light blue as the active input pill track */
     }
     html.dark {
       --ink:    #f5f5f7;
@@ -55,6 +59,7 @@
       --bob-dark:   #ff8a65;
       --bob-bd:     #8c3a18;
       --bob-glow:   rgba(244,81,30,0.32);
+      --row-hl:     #1a2a42;
     }
 
     body {
@@ -273,6 +278,27 @@
     }
     .sig-box { animation: pillIn 0.30s ease both; }
 
+    /* ── Truth table below the graph (KaTeX-rendered to match the post's tables) ── */
+    #ttable {
+      position: relative;
+      /* .post-content is 0.95rem; KaTeX scales by 1.21 on top, same as in the post */
+      font-size: 0.95rem;
+      color: var(--ink);
+      animation: pillIn 0.30s ease both;
+    }
+    #ttable .katex-display { margin: 0; position: relative; z-index: 1; }
+    #ttable .alice { color: var(--alice-dark); }
+    #ttable .bob   { color: var(--bob-dark); }
+    /* Sliding highlight behind the row matching the current (x₁, x₂) input */
+    #thl {
+      position: absolute;
+      z-index: 0;
+      background: var(--row-hl);
+      border-radius: 6px;
+      opacity: 0;
+      transition: top 0.28s ease, left 0.28s ease, width 0.28s ease, opacity 0.22s ease;
+    }
+
     /* ── Interpretation overlay paths ── */
     .ipath { fill: none; stroke-width: 2.8; stroke-linecap: round; opacity: 0.45; }
 
@@ -299,6 +325,8 @@
     <g id="nodes"></g>
   </svg>
 </div>
+
+<div id="ttable"><div id="thl"></div><div id="tmath"></div></div>
 
 <script>
 // ── Theme sync ────────────────────────────────────────────────────────────────
@@ -329,7 +357,7 @@ const P = {
 };
 
 // Signal pill geometry
-const PW = 172, PH = 88, PRX = 44;
+const PW = 236, PH = 88, PRX = 44;
 // Signal pill centres — vertically aligned with x1, x2
 const SP = { s1: [YX_NORM, 168], s2: [YX_NORM, 332] };
 
@@ -447,8 +475,8 @@ function drawOverlay() {
     paths += hToPill(P.h3[0], P.h3[1], s2x, s2y);
     paths += pillToOut(s1x, s1y);
     paths += pillToOut(s2x, s2y);
-    pills += pill(s1x, s1y, 'h₁ − h₃', 'v-a1', 'alice-pill');
-    pills += pill(s2x, s2y, 'h₂ − h₃', 'v-a2', 'alice-pill');
+    pills += pill(s1x, s1y, 'a₁ = h₁ − h₃', 'v-a1', 'alice-pill');
+    pills += pill(s2x, s2y, 'a₂ = h₂ − h₃', 'v-a2', 'alice-pill');
   } else {
     paths += hToPill(P.h3[0], P.h3[1], s1x, s1y);
     paths += hToPill(P.h1[0], P.h1[1], s2x, s2y);
@@ -456,8 +484,8 @@ function drawOverlay() {
     paths += hToPill(P.h3[0], P.h3[1], s2x, s2y);
     paths += pillToOut(s1x, s1y);
     paths += pillToOut(s2x, s2y);
-    pills += pill(s1x, s1y, '1 − h₃', 'v-b1', 'bob-pill');
-    pills += pill(s2x, s2y, 'h₁ + h₂ − h₃', 'v-b2', 'bob-pill');
+    pills += pill(s1x, s1y, 'b₁ = 1 − h₃', 'v-b1', 'bob-pill');
+    pills += pill(s2x, s2y, 'b₂ = h₁ + h₂ − h₃', 'v-b2', 'bob-pill');
   }
 
   pathG.innerHTML = paths;
@@ -478,6 +506,77 @@ function pill(cx, cy, formula, valId, cls) {
       <text id="${valId}" class="sig-val" y="16">0</text>
     </g>
   </g>`;
+}
+
+// ── Truth table ───────────────────────────────────────────────────────────────
+// Rendered with KaTeX (same version as the site) so it matches the post's
+// array tables exactly. Column layout:
+//   x₁ x₂ | h₁ h₂ h₃ | [a₁ a₂ | OR(a₁,a₂)]  | y
+// where the bracketed section appears only in Alice/Bob mode, tinted in
+// their color; the y column stays on the right in all modes.
+function renderTable() {
+  const m = S.mode;
+  const tint = s => m === 'none' ? s : `\\htmlClass{${m}}{${s}}`;
+
+  let spec, head;
+  if (m === 'none') {
+    spec = 'cc|ccc|c';
+    head = `x_1 & x_2 & h_1 & h_2 & h_3`;
+  } else if (m === 'alice') {
+    spec = 'cc|ccc|cc|c|c';
+    head = `x_1 & x_2 & h_1 & h_2 & h_3 & ${tint('a_1')} & ${tint('a_2')} & ${tint('\\mathrm{OR}(a_1,a_2)')}`;
+  } else {
+    spec = 'cc|ccc|cc|c|c';
+    head = `x_1 & x_2 & h_1 & h_2 & h_3 & ${tint('b_1')} & ${tint('b_2')} & ${tint('\\mathrm{AND}(b_1,b_2)')}`;
+  }
+  head += ` & y`;
+
+  const body = [[0,0],[0,1],[1,0],[1,1]].map(([x1, x2]) => {
+    const h1 = x1, h2 = x2, h3 = x1 & x2, y = x1 ^ x2;
+    const cells = [x1, x2, h1, h2, h3];
+    if (m === 'alice')    cells.push(tint(h1 - h3), tint(h2 - h3), tint(y));
+    else if (m === 'bob') cells.push(tint(1 - h3), tint(h1 + h2 - h3), tint(y));
+    cells.push(y);
+    return cells.join(' & ');
+  }).join(' \\\\ ');
+
+  katex.render(
+    `\\begin{array}{${spec}} ${head} \\\\ \\hline ${body} \\end{array}`,
+    document.getElementById('tmath'),
+    { displayMode: true, trust: true, strict: false }
+  );
+
+  // Tint the vertical rule between the interpreted signals and their gate
+  // column (3rd separator); the structural rules stay in the ink color.
+  if (m !== 'none') {
+    const seps = document.querySelectorAll('#tmath .vertical-separator');
+    if (seps[2]) seps[2].style.borderColor = `var(--${m}-dark)`;
+  }
+  highlightRow();
+}
+
+// Position the highlight band behind the row matching the current input.
+// The \hline under the header marks the top of the data region; the four
+// data rows are identical in content, so they divide that region evenly.
+function highlightRow() {
+  const hl = document.getElementById('thl');
+  try {
+    const wrap = document.getElementById('ttable');
+    const arr  = wrap.querySelector('.katex-html');
+    const rule = wrap.querySelector('.hline');
+    const wr = wrap.getBoundingClientRect();
+    const ar = arr.getBoundingClientRect();
+    const rr = rule.getBoundingClientRect();
+    const rowH = (ar.bottom - rr.bottom) / 4;
+    const i = S.x1 * 2 + S.x2;
+    hl.style.left   = (ar.left - wr.left - 10) + 'px';
+    hl.style.width  = (ar.width + 20) + 'px';
+    hl.style.top    = (rr.bottom - wr.top + i * rowH + 1) + 'px';
+    hl.style.height = (rowH - 2) + 'px';
+    hl.style.opacity = '1';
+  } catch (e) {
+    hl.style.opacity = '0';
+  }
 }
 
 // ── Update ────────────────────────────────────────────────────────────────────
@@ -502,6 +601,8 @@ function update() {
   const ry = Math.round(v.y);
   document.getElementById('ng-y').classList.toggle('active', ry === 1);
   document.getElementById('nv-y').textContent = ry;
+
+  highlightRow();
 
   // Signal pills
   if (S.mode === 'alice') {
@@ -553,6 +654,7 @@ document.getElementById('seg').addEventListener('click', e => {
   }
 
   drawOverlay();
+  renderTable();
   update();
 });
 
@@ -563,7 +665,11 @@ document.querySelectorAll('.edge[data-to="y"]').forEach(el =>
   el.style.d = `path("${el.getAttribute('d')}")`
 );
 buildNodes();
+renderTable();
 update();
+// Re-measure the row highlight once KaTeX's webfonts land (metrics shift) and on resize
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(highlightRow);
+window.addEventListener('resize', highlightRow);
 
 // Auto-resize: tell the parent iframe our true height whenever it changes
 (function() {

@@ -1320,7 +1320,7 @@ $$
 y = \mathrm{XOR}(x_1,x_2) =\mathrm{AND}(\mathrm{NAND}(x_1,x_2),\mathrm{OR}(x_1,x_2)).
 $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and outputs $1$ if both are true.</p>
 <h3 id="moral-of-the-story">Moral of the story</h3>
-<p>The students interpretations are summarized in this interactable widget:</p>
+<p>The students&rsquo; interpretations are summarized in this interactive widget:</p>
 <iframe id="widget-0" src="/widgets/xor_widget.html" width="100%" height="200px" frameborder="0" scrolling="no" style="border:none; display:block;"></iframe>
 <script>
 (function(){
@@ -1332,7 +1332,7 @@ $$<p>It first computes $\mathrm{OR}(x_1,x_2)$ and $\mathrm{NAND}(x_1,x_2)$, and 
 })();
 </script>
 
-<p>Both students are correct in their interpretation. And yet, these interpretations of mechanism are inconsistent with each other: in one, the mechanism of the output neuron is an OR gate, and in the latter it is an AND gate. The existence of a <em>true</em> mechanism is subjective, and depends on ones innate bias towards which features, $\{a_1, a_2, \mathrm{OR}\}$ or $\{b_1, b_2, \mathrm{AND} \}$, provide greater cognitive utility.</p>
+<p>Both students are correct in their interpretation. And yet, these interpretations of mechanism are inconsistent with each other: in one, the mechanism of the output neuron is an OR gate, and in the latter it is an AND gate. The existence of a <em>true</em> mechanism is subjective, and depends on one&rsquo;s innate bias towards which features, $\{a_1, a_2, \mathrm{OR}\}$ or $\{b_1, b_2, \mathrm{AND} \}$, provide greater cognitive utility.</p>
 <p>Humans seem to have an implicit bias for some interpretations over others. I posit that humans&rsquo; bias toward cognitive closure is actually a bias towards minimizing computational complexity: by favoring reusable building blocks that appear across many explanations&mdash;and by favoring explanations that use building blocks one already knows&mdash;humans are able to build models of the world with minimal cognitive overhead.</p>
 <!-- We may consider a grounded example from electrical engineering. When defining the mechanism of an electrical circuit, we are likely to decompose the circuit into the parts that compose it (transitors, resistors, capacitors, etc.). This abstraction is useful to, say, manufactors, who build these parts, or to people learning to build these circuit by hand and need to know what to buy at the store. However, there is no mathematical principle that states physical parts are the true unit of electrical circuitry. Once the circuit is constructed, its dynamics can be decomposed in a myriad of equivalent ways, as made precise by the [theory of equivalent circuits](https://www.youtube.com/watch?v=-kkvqr1wSwA).  -->
 <p>The moral of the story is that representing a function as a composition of modular pieces is a mathematically non-unique process. Consequently, so are the narratives we spin about how neural networks function. That is not to say that mechanistic interpretability is not useful. On the contrary, having a narrative that predicts function helps researchers keep pace with the ever-growing complexity of modern AI. It is simply that the narrative, whatever it may be, is likely one of many. In any case, interpretability remains pragmatic: it may not yield a uniquely correct narrative, but it can still reveal when a network has learned the wrong lesson.</p>
